@@ -20,7 +20,7 @@ export function SiteFooter() {
             Email
           </a>
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/carsonpimental"
             target="_blank"
             rel="noopener noreferrer"
             className="text-zinc-300 transition hover:text-zinc-50"

@@ -1,9 +1,4 @@
-export type ProjectCategory =
-  | "Data Pipeline & Modeling"
-  | "Full-Stack Application"
-  | "Batted-Ball Analytics"
-  | "Forecasting"
-  | "Machine Learning Research";
+export type ProjectCategory = string;
 
 export type Project = {
   slug: string;
@@ -82,10 +77,10 @@ export const projects: Project[] = [
   },
   {
     slug: "mlb-deviations",
-    title: "MLB Deviations — Pitcher Change Analysis",
-    category: "Full-Stack Application",
+    title: "MLB Deviations",
+    category: "Full-Stack Baseball Analytics · Statcast · Change Detection",
     description:
-      "Full-stack tool for detecting meaningful pitcher changes across date ranges (movement, velo, usage, release) with clean visual comparisons and shareable outputs.",
+      "Developed MLB Deviations, a full-stack pitcher analysis application that compares MLB pitchers across custom date ranges and automatically surfaces meaningful changes in pitch characteristics. The platform processes Statcast pitch-level data to compare velocity, movement, release traits, spin characteristics, and pitch usage, while using z-scores to rank the most unusual changes. The final interface combines statistical comparisons with movement and usage visualizations to make arsenal changes easier to identify and communicate.",
     technologies: [
       "Python",
       "FastAPI",
@@ -93,12 +88,16 @@ export const projects: Project[] = [
       "React",
       "Statcast",
       "pybaseball",
-      "Change Detection",
+      "Z-Scores",
+      "Data Visualization",
     ],
     featured: true,
     image: {
-      src: "/images/projects/mlb-deviations.svg",
-      alt: "Placeholder app screenshot",
+      src: "/images/projects/DEVIATIONS/Dev Cover.png",
+      alt: "MLB Deviations cover",
+    },
+    links: {
+      external: "https://x.com/MLB_DEVIATIONS",
     },
     sections: {
       overview:
@@ -125,130 +124,142 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "uci-batted-ball-clustering",
-    title: "UCI Baseball — Batted Ball Clustering & Defensive Positioning",
-    category: "Batted-Ball Analytics",
+    slug: "scouts-defensive-alignments",
+    title: "scOUTs – Defensive Alignments",
+    category: "Baseball Analytics · TrackMan · Clustering · Defensive Positioning",
     description:
-      "TrackMan-based clustering of batted balls to inform defensive positioning and communicate hitter tendencies with coach-friendly visuals.",
+      "Developed scOUTs, a Next.js defensive positioning application that transforms raw TrackMan batted-ball data into interactive spray charts and opponent scouting reports. The platform cleans and combines TrackMan exports, classifies batted balls into infield and outfield groups, and uses cluster-based epicenters to identify common landing zones. Final reports translate those patterns into practical depth, angle, and directional positioning guidance that coaches and players can use for game preparation.",
     technologies: [
-      "Python",
       "TrackMan",
       "Clustering",
-      "Visualization",
-      "Defensive Positioning",
+      "Data Cleaning",
+      "Data Visualization",
+      "Baseball Scouting",
+      "Next.js",
     ],
     featured: false,
     image: {
-      src: "/images/projects/uci-clusters.svg",
-      alt: "Placeholder cluster visual",
+      src: "/images/projects/BB/scOUTs cover.png",
+      alt: "scOUTs cover",
     },
     sections: {
       overview:
-        "Created for UCI Baseball to translate TrackMan batted-ball data into actionable defensive positioning recommendations.",
+        "scOUTs is a defensive positioning application that turns raw TrackMan batted-ball exports into spray charts and opponent scouting reports that translate patterns into actionable depth/angle guidance.",
       problem:
-        "How can we summarize hitter batted-ball tendencies in a way that helps coaches and players make positioning decisions?",
+        "How can we reliably translate raw tracking exports into a repeatable scouting workflow that produces coach-usable defensive positioning recommendations?",
       data:
-        "TrackMan batted-ball events with spray, launch characteristics, and contextual descriptors, aggregated per hitter and situation.",
+        "TrackMan batted-ball exports (CSV) containing ball-in-play events with hit type tags, launch characteristics, and landing/trajectory information used to build infield/outfield groupings.",
       approach:
-        "Cluster batted balls into archetypes, then map clusters to recommended infield/outfield positioning adjustments and visual summaries.",
+        "Ingest and clean multiple TrackMan exports, classify batted balls into infield/outfield groups, generate spray visualizations, and summarize common landing zones using clustering/epicenters for report-ready scouting outputs.",
       methods:
-        "Feature engineering on batted-ball vectors; clustering and cluster stability checks; visualization of clusters and recommended positioning; coach-facing summaries.",
+        "Data cleaning + schema normalization; rule-based batted-ball classification with manual overrides; spray chart visualization; clustering/epicenter summaries of landing zones; report generation designed for printing and distribution.",
       results:
-        "Clear cluster visuals and positioning recommendations that can be communicated quickly in meetings and pre-series prep.",
+        "Generated infield and outfield scouting reports that turn spray tendencies into practical defensive positioning guidance, producing clean, shareable packets for game preparation.",
       application:
-        "Defensive alignment planning, scouting reports, and player discussions around approach and tendencies.",
+        "Opponent preparation: hitter-specific scouting packets for coaches and players, supporting series planning and pregame defensive alignment decisions.",
       visuals:
-        "Space reserved for spray charts, cluster plots, and positioning diagrams.",
+        "See the project page for report-ready infield/outfield outputs and the scOUTs cover visual.",
       takeaways: [
-        "Clustering is most valuable when paired with coaching language.",
-        "Visual clarity matters more than model complexity for adoption.",
+        "Tracking data becomes valuable when translated into decisions.",
+        "Scouting tools need workflow + print-ready outputs, not just charts.",
       ],
     },
   },
   {
     slug: "farmer-boys-forecasting",
-    title: "Farmer Boys Forecasting",
-    category: "Forecasting",
+    title: "Farmer Boys Forecasting & Analytics Platform",
+    category: "Time Series Forecasting · Machine Learning · Model Validation",
     description:
-      "Graduate capstone forecasting system with six candidate methods, 40 rolling backtests, and an ensemble model delivered through a Streamlit app for nontechnical users.",
+      "Built and validated an ensemble forecasting model across six candidate models and 40 rolling backtests, evaluating and stress-testing competing approaches to identify the most predictive blend. I also applied OLS decomposition to separate underlying performance from seasonal and calendar noise, creating cleaner baselines and adjusted metrics for decision-making. The final models were deployed through a Streamlit web app that translated complex outputs into simple, actionable information for non-technical stakeholders across the organization.",
     technologies: [
-      "Time Series",
-      "ETS",
-      "OLS Decomposition",
       "LightGBM",
-      "Ensembling",
-      "Backtesting",
+      "ETS",
+      "OLS",
+      "Time Series Forecasting",
+      "Feature Engineering",
+      "Ensemble Modeling",
+      "Rolling Backtests",
       "Streamlit",
+      "Python",
     ],
     featured: false,
     image: {
-      src: "/images/projects/forecasting.svg",
-      alt: "Placeholder forecasting chart",
+      src: "/images/projects/FB/08868770016071080395fca85c7d8954-400-400-thumb.png",
+      alt: "Farmer Boys logo",
+    },
+    links: {
+      reportPdf: "/documents/Farmer_Boys_Final_Client_Report.pdf",
     },
     sections: {
       overview:
-        "Capstone project focused on building a robust, validated forecasting workflow for sales/transactions, and delivering outputs through a tool nontechnical stakeholders can use.",
+        "Production-ready forecasting and analytics workflow built for Farmer Boys, with separate pipelines for sales and transactions, rigorous rolling validation, and self-service delivery through Streamlit.",
       problem:
-        "How can we improve forecast accuracy and reliability for operational planning while keeping outputs interpretable and easy to consume?",
+        "How can we deliver accurate, stable forecasts that are validated out-of-sample and packaged into a workflow that nontechnical stakeholders can run weekly?",
       data:
-        "Historical sales and transaction time series, with calendar effects and potential external signals engineered as features.",
+        "Weekly sales and transaction time series with engineered calendar, holiday, and seasonality signals plus lag/rolling features designed for forecasting stability.",
       approach:
-        "Evaluate multiple model families with rolling backtests, then select/ensemble based on performance and stability.",
+        "Build a library of candidate statistical + ML models, validate using rolling backtests, then optimize ensembles and deploy results through a self-service app.",
       methods:
-        "40 rolling backtests; candidate models (OLS decomposition, ETS, LightGBM, and others); validation metrics and error analysis; ensemble strategy; Streamlit delivery.",
+        "Feature engineering (lags, rolling averages, momentum, trend, YoY, seasonal, holiday); OLS seasonal decomposition; ETS variants; LightGBM; ensemble weight searches; 40 rolling 13-week backtests; Streamlit delivery with downloadable outputs.",
       results:
-        "A validated workflow and app-based delivery that supports practical forecasting usage rather than a one-off analysis.",
+        "Sales: MAPE 1.29% (R² 0.81). Transactions: MAPE 1.44% (R² ~0.81). Validation: 40 rolling backtests producing 520 out-of-sample predictions. Ensembles outperformed individual component models for both targets.",
       application:
-        "Planning and decision support for operations teams; consistent forecast delivery and interpretability.",
+        "Operational planning and decision support via repeatable forecast generation, decomposition outputs, charts, and exports designed for nontechnical users.",
       visuals:
-        "Space reserved for backtest result charts and the Streamlit app UI.",
+        "See the project page for the Streamlit dashboard, decomposition visuals, forecast vs benchmark comparisons, and ensemble evidence.",
       takeaways: [
-        "Backtesting design drives trustworthy conclusions.",
-        "A usable app can be the difference between adoption and shelfware.",
+        "Rolling validation is critical for trustworthy forecasting claims.",
+        "Ensembles can outperform single models when optimized and stress-tested.",
+        "Delivery matters: self-service workflows drive adoption.",
       ],
     },
   },
   {
     slug: "mlb-allstar-2026-ml",
-    title: "Predicting the 2026 MLB All-Star Team with Machine Learning",
-    category: "Machine Learning Research",
+    title: "Predicting the 2026 MLB All-Star Team",
+    category: "Machine Learning · Model Validation · Baseball Analytics",
     description:
-      "Formal graduate ML project predicting All-Star selection using feature engineering, model comparisons, and validation—paired with baseball interpretation.",
+      "Developed a machine learning framework to predict 2026 MLB All-Star selections, comparing multiple classification approaches and tuning models through stratified cross-validation and GridSearchCV. To improve performance on the imbalanced target, I tested SMOTE, created a custom F-beta evaluation metric, and optimized classification thresholds based on the cost of missed All-Stars versus false positives. The selected model was then applied to Steamer projections to produce player-level All-Star probabilities and final predictions.",
     technologies: [
-      "Machine Learning",
-      "Feature Engineering",
-      "Model Comparison",
-      "Validation",
-      "Baseball Interpretation",
+      "Python",
+      "Scikit-learn",
+      "Logistic Regression",
+      "Random Forest",
+      "Decision Trees",
+      "Naive Bayes",
+      "SMOTE",
+      "GridSearchCV",
     ],
     featured: false,
     image: {
-      src: "/images/projects/allstar-ml.svg",
-      alt: "Placeholder model comparison",
+      src: "/images/projects/2026-mlb-all-star-game-logo-philadelphia-phillies-sportslogosnet-feat-111853z-768x499.jpg",
+      alt: "2026 MLB All-Star Game logo",
     },
     links: {
-      reportPdf: "/documents/all-star-report.pdf",
+      reportPdf: "/documents/ML MLB All Star Report.pdf",
     },
     sections: {
       overview:
-        "Formal research project building and validating ML models to predict MLB All-Star selections, with emphasis on methodology, evaluation, and interpretation.",
+        "Built and evaluated a machine-learning framework to predict MLB All-Star selections from player performance data, with emphasis on validation, modeling judgment, and baseball application.",
       problem:
-        "Can we predict All-Star selection using publicly available performance and context features, and what signals appear to drive selection outcomes?",
+        "How can we predict All-Star selection probabilities in a way that is methodologically sound (no leakage), robust to class imbalance, and aligned with decision-making objectives?",
       data:
-        "Player-season level dataset with engineered performance and context variables, curated for consistent training/evaluation splits.",
+        "Player-season level dataset with engineered performance features and a clearly defined modeling window informed by data validation checks on historical All-Star standards.",
       approach:
-        "Frame as a supervised classification problem, engineer features aligned to baseball value signals, and compare multiple model families under a clear validation scheme.",
+        "Compare multiple classification approaches under stratified cross-validation, tune hyperparameters and classification thresholds, and select a final model based on a custom precision-recall objective that weights recall more heavily.",
       methods:
-        "Feature engineering; baseline models; advanced ML models; cross-validation/holdouts; calibration; error analysis; interpretation of key drivers.",
+        "Scikit-learn pipelines (leakage prevention), stratified 5-fold cross-validation, GridSearchCV, SMOTE variants, and threshold optimization using an F-beta objective weighted toward recall.",
       results:
-        "Validated model comparisons and a structured report detailing methodology, results, and baseball interpretation.",
+        "Selected Logistic Regression with SMOTE (F-beta 0.65; recall 0.81; precision 0.52) at an optimized classification threshold of 0.33. Other models achieved higher recall, but this model provided the strongest balance of recall and precision for the project objective.",
       application:
-        "Demonstrates end-to-end ML process, rigorous evaluation, and the ability to communicate results in baseball terms.",
+        "Applied the selected model to 2026 Steamer projections to generate player-level All-Star probabilities for evaluation and discussion.",
       visuals:
-        "Space reserved for tables/figures from the written report and any model interpretation visuals.",
+        "See the project page for key validation results, model comparisons, and final prediction outputs.",
       takeaways: [
-        "Model performance must be paired with interpretability.",
-        "Clear validation prevents overconfident conclusions.",
+        "Validate assumptions about the target before modeling.",
+        "Treat imbalanced classification as a precision-recall problem—not an accuracy problem.",
+        "Prevent leakage with pipelines and fold-contained preprocessing.",
+        "Tune thresholds to match the real objective, not the default 0.50 cutoff.",
       ],
     },
   },

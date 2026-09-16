@@ -49,7 +49,7 @@ export default function Home() {
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <ButtonLink href="/#projects">View Projects</ButtonLink>
                 <ButtonLink
-                  href="/documents/resume.pdf"
+                  href="/images/projects/resume/Carson%20Pimental%20Resume%20Sep.pdf"
                   variant="secondary"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -57,7 +57,7 @@ export default function Home() {
                   Resume
                 </ButtonLink>
                 <ButtonLink
-                  href="https://www.linkedin.com/"
+                  href="https://www.linkedin.com/in/carsonpimental"
                   variant="ghost"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -241,7 +241,7 @@ export default function Home() {
                   Email
                 </ButtonLink>
                 <ButtonLink
-                  href="https://www.linkedin.com/"
+                  href="https://www.linkedin.com/in/carsonpimental"
                   variant="secondary"
                   target="_blank"
                   rel="noopener noreferrer"

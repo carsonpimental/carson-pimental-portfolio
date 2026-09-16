@@ -10,13 +10,13 @@ export function ProjectCard({
   project: Project;
   size?: "featured" | "normal";
 }) {
+  const isFarmerBoys = project.slug === "farmer-boys-forecasting";
   const wrapper =
     size === "featured"
       ? "rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] transition hover:border-white/20 hover:bg-white/[0.07]"
       : "rounded-xl border border-white/10 bg-white/5 p-5 transition hover:border-white/20 hover:bg-white/[0.07]";
 
-  const imageClass =
-    size === "featured" ? "h-56 sm:h-64" : "h-44 sm:h-48";
+  const imageClass = "aspect-square";
 
   return (
     <article className={wrapper}>
@@ -25,7 +25,11 @@ export function ProjectCard({
           src={project.image.src}
           alt={project.image.alt}
           fill
-          className="object-cover opacity-90"
+          className={
+            isFarmerBoys
+              ? "object-contain object-center bg-black opacity-95"
+              : "object-cover opacity-90"
+          }
           sizes={
             size === "featured"
               ? "(min-width: 1024px) 900px, 100vw"

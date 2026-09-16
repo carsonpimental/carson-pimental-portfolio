@@ -32,9 +32,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${fontSans.variable} ${fontDisplay.variable} ${fontMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-black text-zinc-50">
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col bg-black text-zinc-50"
+      >
         <SiteNav />
         <main className="flex-1">{children}</main>
         <SiteFooter />

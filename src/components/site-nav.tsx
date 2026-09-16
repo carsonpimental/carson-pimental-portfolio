@@ -35,7 +35,7 @@ export function SiteNav() {
           ))}
 
           <a
-            href="/documents/resume.pdf"
+            href="/images/projects/resume/Carson%20Pimental%20Resume%20Sep.pdf"
             className="ml-1 inline-flex items-center rounded-md border border-white/15 bg-white/5 px-3 py-2 text-sm text-zinc-50 transition hover:border-white/25 hover:bg-white/10"
             target="_blank"
             rel="noopener noreferrer"
