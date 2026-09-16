@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#070a0f"/>
+  <rect x="70" y="70" width="1460" height="760" rx="28" fill="#ffffff" opacity="0.06"/>
+  <text x="140" y="200" font-family="ui-sans-serif, system-ui" font-size="34" fill="#e4e4e7" font-weight="600">Farmer Boys Forecasting</text>
+  <text x="140" y="245" font-family="ui-sans-serif, system-ui" font-size="18" fill="#a1a1aa">Rolling backtests • ensembles • Streamlit app</text>
+  <g fill="none" stroke-width="6" opacity="0.9">
+    <path d="M180 640 C 320 520, 480 700, 620 560 C 760 420, 920 680, 1060 520 C 1200 380, 1360 600, 1480 440" stroke="#93c5fd"/>
+    <path d="M180 670 C 320 550, 480 730, 620 590 C 760 450, 920 710, 1060 550 C 1200 410, 1360 630, 1480 470" stroke="#a78bfa" opacity="0.75"/>
+  </g>
+  <rect x="140" y="320" width="1320" height="180" rx="18" fill="#ffffff" opacity="0.05"/>
+  <text x="170" y="380" font-family="ui-monospace, SFMono-Regular" font-size="16" fill="#d4d4d8">6 candidate models • 40 rolling backtests • ensemble selection</text>
+</svg>

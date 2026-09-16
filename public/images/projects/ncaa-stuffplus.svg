@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#93c5fd" stop-opacity="0.35"/>
+      <stop offset="0.55" stop-color="#0b1220" stop-opacity="1"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="#070a0f"/>
+  <rect x="60" y="60" width="1480" height="780" rx="28" fill="url(#g)" opacity="0.9"/>
+  <rect x="120" y="140" width="520" height="280" rx="18" fill="#ffffff" opacity="0.08"/>
+  <rect x="680" y="140" width="800" height="480" rx="18" fill="#ffffff" opacity="0.06"/>
+  <rect x="120" y="460" width="520" height="160" rx="18" fill="#ffffff" opacity="0.06"/>
+  <rect x="120" y="650" width="1360" height="140" rx="18" fill="#ffffff" opacity="0.05"/>
+  <text x="150" y="210" font-family="ui-sans-serif, system-ui" font-size="34" fill="#e4e4e7" font-weight="600">NCAA Pitcher Evaluation</text>
+  <text x="150" y="255" font-family="ui-sans-serif, system-ui" font-size="18" fill="#a1a1aa">Pipeline • Modeling • Stuff+ / Location+ • Dashboard</text>
+  <text x="710" y="215" font-family="ui-monospace, SFMono-Regular" font-size="16" fill="#d4d4d8">2M+ pitches • feature tables • run values • clustering</text>
+</svg>
