@@ -38,7 +38,7 @@ export default function Home() {
                 "R",
                 "Machine Learning",
                 "Statistical Modeling",
-                "Baseball Analytics",
+                "Dashboards",
               ].map((x, idx) => (
                 <span key={x} className="inline-flex items-center">
                   {idx === 0 ? null : (
@@ -50,9 +50,6 @@ export default function Home() {
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-3">
-              <ButtonLink href="mailto:carson.pimental@example.com">
-                Email / Contact
-              </ButtonLink>
               <ButtonLink
                 href="/images/projects/resume/Carson%20Pimental%20Resume%20Sep.pdf"
                 variant="secondary"
@@ -128,9 +125,9 @@ export default function Home() {
               <style>{`.reel::-webkit-scrollbar{display:none;}`}</style>
 
               {[
-                "/images/projects/banner/Screenshot 2026-09-17 134623.png",
+                "/images/projects/Stuff+/Screenshot 2026-09-17 150728.png",
                 "/images/projects/banner/Screenshot 2026-09-17 134808.png",
-                "/images/projects/banner/Screenshot 2026-09-17 134648.png",
+                "/images/projects/BB/Screenshot 2026-09-17 151207.png",
                 "/images/projects/banner/Screenshot 2026-09-17 134722.png",
                 "/images/projects/banner/Screenshot 2026-09-17 134605.png",
               ].map((src) => (
@@ -192,11 +189,7 @@ export default function Home() {
                 <div className="mx-auto w-full max-w-md overflow-hidden border border-white/10 bg-black">
                   <div className="relative aspect-square">
                     <Image
-                      src={
-                        p.slug === "mlb-allstar-2026-ml"
-                          ? "/images/projects/yw1y9vmsrfvay3ciqisb.jpg"
-                          : p.image.src
-                      }
+                      src={p.image.src}
                       alt={p.image.alt}
                       fill
                       className={

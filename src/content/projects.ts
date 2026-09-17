@@ -51,7 +51,7 @@ export const projects: Project[] = [
     ],
     featured: true,
     image: {
-      src: "/images/projects/Stuff+/Screenshot 2026-09-17 130011.png",
+      src: "/images/projects/Stuff+/Screenshot 2026-09-17 153155.png",
       alt: "NCAA pitcher evaluation dashboard",
     },
     sections: {
@@ -235,7 +235,7 @@ export const projects: Project[] = [
     ],
     featured: false,
     image: {
-      src: "/images/2026 All Star Game.jpg",
+      src: "/images/2026-mlb-all-star-game-logo-philadelphia-phillies-sportslogosnet-feat-111853z-768x499.jpg",
       alt: "2026 MLB All-Star Game",
     },
     links: {
