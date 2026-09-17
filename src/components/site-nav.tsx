@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const links = [
   { href: "/#projects", label: "Projects" },
-  { href: "/research", label: "Research" },
   { href: "/about", label: "About" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function SiteNav() {

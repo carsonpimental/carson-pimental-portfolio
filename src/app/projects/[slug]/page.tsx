@@ -19,6 +19,11 @@ export default async function ProjectDetailPage({
   const isFarmerBoys = slug === "farmer-boys-forecasting";
   const isScouts = slug === "scouts-defensive-alignments";
   const isDeviations = slug === "mlb-deviations";
+  const isNCAA = slug === "ncaa-pitcher-evaluation";
+
+  const hasLinks = Boolean(
+    project.links?.reportPdf || project.links?.github || project.links?.external,
+  );
 
   return (
     <div>
@@ -48,7 +53,7 @@ export default async function ProjectDetailPage({
 
       <section>
         <Container className="py-12 sm:py-16">
-          <div className="grid gap-10 lg:grid-cols-[1.6fr_0.9fr]">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.6fr_0.9fr]">
             <div className="space-y-10">
               {isAllStar ? (
                 <>
@@ -99,19 +104,6 @@ export default async function ProjectDetailPage({
                         precision under the project objective.
                       </p>
                     </div>
-
-                    <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.03] p-6">
-                      <p className="text-sm font-medium text-zinc-50">Why It Matters</p>
-                      <p className="mt-4 text-sm leading-7 text-zinc-400">
-                        This project demonstrates the full machine-learning
-                        workflow: validating the data, defining an
-                        objective-specific evaluation metric, comparing
-                        algorithms, addressing class imbalance, preventing
-                        leakage, tuning models, optimizing decision thresholds,
-                        and applying the selected model to unseen projection
-                        data.
-                      </p>
-                    </div>
                   </div>
 
                   <div className="space-y-6">
@@ -154,6 +146,103 @@ export default async function ProjectDetailPage({
                         </div>
                       </div>
                     ))}
+                  </div>
+                </>
+              ) : null}
+
+              {isNCAA ? (
+                <>
+                  <div className="space-y-6">
+                    <div className="overflow-hidden rounded-2xl border border-white/10 bg-black">
+                      <div className="relative aspect-[16/9]">
+                        <Image
+                          src="/images/projects/Stuff+/Screenshot 2026-09-17 130011.png"
+                          alt="NCAA pitcher evaluation dashboard"
+                          fill
+                          className="object-contain bg-black"
+                          sizes="(min-width: 1024px) 900px, 100vw"
+                          priority
+                        />
+                      </div>
+                    </div>
+
+                    <p className="text-xs text-zinc-500 [font-family:var(--font-mono)]">
+                      Pitcher Report Dashboard — combines movement profiles,
+                      Stuff+ grades, and pitch-cluster characteristics into a
+                      single pitcher evaluation interface.
+                    </p>
+
+                    <p className="text-sm leading-7 text-zinc-400 sm:text-base">
+                      The project was developed independently while working
+                      directly with Baltimore Orioles Assistant General Manager
+                      Sig Mejdal on methods for evaluating NCAA Division I
+                      pitchers.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <SectionTitle title="Key Work" />
+                    <ul className="space-y-2 text-sm text-zinc-300 sm:text-base">
+                      {[
+                        "Large-Scale Data Pipeline: Built a repeatable workflow for more than 2 million TrackMan pitches, including ingestion, cleaning, validation, transformation, and database storage.",
+                        "Data Quality: Resolved missing identifiers, inconsistent values, team mappings, and other issues required to create trustworthy model-ready data.",
+                        "Feature Engineering: Created pitcher- and pitch-level features including rolling velocity measures, pitcher characteristics, count/context variables, and pitch-level run values.",
+                        "Pitch Classification: Tested clustering methodologies using pitch velocity and movement characteristics and compared results against manual classifications and TrackMan's automated tagging.",
+                        "Model Development: Developed Stuff+ and Location+ modeling workflows designed to evaluate pitch quality using physical pitch characteristics and game context.",
+                        "Dashboard: Built an interactive pitcher-report interface that combines Stuff+ grades, movement profiles, pitch-cluster characteristics, and other evaluation metrics in one place.",
+                      ].map((x) => (
+                        <li key={x} className="flex gap-3">
+                          <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-white/40" />
+                          <span className="text-zinc-300">{x}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="space-y-4">
+                    <SectionTitle title="Modeling Approach" />
+                    <p className="text-sm leading-7 text-zinc-400 sm:text-base">
+                      The project was built iteratively rather than around a
+                      single model. Pitch classifications were tested across
+                      pitchers and compared against existing labels, while
+                      Stuff+ and Location+ models were developed from
+                      model-ready TrackMan features and pitch-level run value
+                      outcomes. The objective was to create a system that could
+                      be evaluated, adjusted, and expanded as additional NCAA
+                      data became available.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <SectionTitle title="Evaluating Pitch Classification" />
+                    <p className="text-sm leading-7 text-zinc-400 sm:text-base">
+                      As part of the modeling workflow, I tested pitch-clustering
+                      methods using velocity and movement characteristics and
+                      evaluated how the resulting classifications compared with
+                      both manually assigned pitch labels and TrackMan's
+                      automated tagging. Rather than treating clustering output
+                      as automatically correct, the comparison was used to
+                      identify where classifications aligned, where methods
+                      disagreed, and where the clustering methodology required
+                      further refinement.
+                    </p>
+
+                    <div className="overflow-hidden rounded-2xl border border-white/10 bg-black">
+                      <div className="relative aspect-[16/9]">
+                        <Image
+                          src="/images/projects/Stuff+/Screenshot 2026-09-17 132335.png"
+                          alt="Pitch classification comparison"
+                          fill
+                          className="object-contain bg-black"
+                          sizes="(min-width: 1024px) 900px, 100vw"
+                        />
+                      </div>
+                    </div>
+
+                    <p className="text-xs text-zinc-500 [font-family:var(--font-mono)]">
+                      Comparison of model-based clustering, manual pitch
+                      classification, and TrackMan automated tagging.
+                    </p>
                   </div>
                 </>
               ) : null}
@@ -203,18 +292,6 @@ export default async function ProjectDetailPage({
                         The ensemble outperformed individual component models
                         for both sales and transactions; see the ensemble table
                         visuals below.
-                      </p>
-                    </div>
-
-                    <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.03] p-6">
-                      <p className="text-sm font-medium text-zinc-50">Why It Matters</p>
-                      <p className="mt-4 text-sm leading-7 text-zinc-400">
-                        This project demonstrates the full forecasting workflow:
-                        data preparation, feature engineering, model comparison,
-                        ensemble optimization, rolling out-of-sample validation,
-                        separate treatment of different target behaviors, and
-                        deployment of the final analytics in a tool designed
-                        for nontechnical users.
                       </p>
                     </div>
                   </div>
@@ -296,29 +373,17 @@ export default async function ProjectDetailPage({
                     </ul>
                   </div>
 
-                  <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.03] p-6">
-                    <p className="text-sm font-medium text-zinc-50">Why It Matters</p>
-                    <p className="mt-4 text-sm leading-7 text-zinc-400">
-                      This project demonstrates the full analytics workflow
-                      from raw tracking data to a usable baseball
-                      decision-support tool. Rather than stopping at
-                      visualization or clustering, the application converts
-                      batted-ball patterns into scouting outputs designed for
-                      coaches and players.
-                    </p>
-                  </div>
-
                   <div className="space-y-6">
                     <SectionTitle title="Reports" />
                     {[
                       {
                         title: "Outfield Report",
-                        src: "/images/projects/BB/Outfield Reports.png",
+                        src: "/images/projects/scOUTs/Outfield Reports.png",
                         alt: "Outfield reports",
                       },
                       {
                         title: "Infield Report",
-                        src: "/images/projects/BB/Infield Reports.png",
+                        src: "/images/projects/scOUTs/Infield Reports.png",
                         alt: "Infield reports",
                       },
                     ].map((img) => (
@@ -446,21 +511,10 @@ export default async function ProjectDetailPage({
                     </div>
                   </div>
 
-                  <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.03] p-6">
-                    <p className="text-sm font-medium text-zinc-50">Why It Matters</p>
-                    <p className="mt-4 text-sm leading-7 text-zinc-400">
-                      This project demonstrates the full workflow from raw MLB
-                      pitch-level data to a usable analytical product. It
-                      combines data ingestion, statistical comparison,
-                      standardized change detection, visualization, and a
-                      front-end interface designed to help users quickly
-                      understand how and when a pitchers arsenal has changed.
-                    </p>
-                  </div>
                 </>
               ) : null}
 
-              {!isAllStar && !isFarmerBoys && !isScouts && !isDeviations ? (
+              {!isAllStar && !isFarmerBoys && !isScouts && !isDeviations && !isNCAA ? (
                 <>
                   <div className="space-y-4">
                     <SectionTitle title="Overview" />
@@ -539,7 +593,7 @@ export default async function ProjectDetailPage({
                   <Image
                     src={
                       isScouts
-                        ? "/images/projects/BB/scOUTs cover.png"
+                        ? "/images/projects/scOUTs/scOUTs cover.png"
                         : project.image.src
                     }
                     alt={project.image.alt}
@@ -555,72 +609,53 @@ export default async function ProjectDetailPage({
                     priority
                   />
                 </div>
-                <div className="space-y-3 p-5">
-                  <p className="text-sm font-medium text-zinc-50">Links</p>
-                  <div className="space-y-2 text-sm">
-                    {isAllStar && project.links?.reportPdf ? (
-                      <a
-                        href={project.links.reportPdf}
-                        className="inline-flex w-full items-center justify-center rounded-md border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-zinc-50 transition hover:border-white/25 hover:bg-white/10"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        View Full Project Report
-                      </a>
-                    ) : null}
-                    {isFarmerBoys && project.links?.reportPdf ? (
-                      <a
-                        href={project.links.reportPdf}
-                        className="inline-flex w-full items-center justify-center rounded-md border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-zinc-50 transition hover:border-white/25 hover:bg-white/10"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        View Full Client Report
-                      </a>
-                    ) : null}
-                    {project.links?.github ? (
-                      <a
-                        href={project.links.github}
-                        className="block text-zinc-300 transition hover:text-zinc-50"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        GitHub
-                      </a>
-                    ) : null}
-                    {project.links?.external ? (
-                      <a
-                        href={project.links.external}
-                        className="block text-zinc-300 transition hover:text-zinc-50"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Project Link
-                      </a>
-                    ) : null}
-                    {project.links?.reportPdf ? (
-                      <a
-                        href={project.links.reportPdf}
-                        className="block text-zinc-300 transition hover:text-zinc-50"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {isAllStar
-                          ? "View Full Project Report"
-                          : isFarmerBoys
-                            ? "View Full Client Report"
-                            : "Read Full Research Report"}
-                      </a>
-                    ) : null}
-                    {!project.links?.github &&
-                    !project.links?.external &&
-                    !project.links?.reportPdf ? (
-                      <p className="text-zinc-500">
-                        Add GitHub / external links in the project config.
-                      </p>
-                    ) : null}
+                {hasLinks ? (
+                  <div className="space-y-3 p-5">
+                    <p className="text-sm font-medium text-zinc-50">Links</p>
+                    <div className="space-y-2 text-sm">
+                      {isAllStar && project.links?.reportPdf ? (
+                        <a
+                          href={project.links.reportPdf}
+                          className="inline-flex w-full items-center justify-center rounded-md border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-zinc-50 transition hover:border-white/25 hover:bg-white/10"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View Full Project Report
+                        </a>
+                      ) : null}
+                      {isFarmerBoys && project.links?.reportPdf ? (
+                        <a
+                          href={project.links.reportPdf}
+                          className="inline-flex w-full items-center justify-center rounded-md border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-zinc-50 transition hover:border-white/25 hover:bg-white/10"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View Full Client Report
+                        </a>
+                      ) : null}
+                      {project.links?.github ? (
+                        <a
+                          href={project.links.github}
+                          className="block text-zinc-300 transition hover:text-zinc-50"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          GitHub
+                        </a>
+                      ) : null}
+                      {project.links?.external ? (
+                        <a
+                          href={project.links.external}
+                          className="block text-zinc-300 transition hover:text-zinc-50"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          External
+                        </a>
+                      ) : null}
+                    </div>
                   </div>
-                </div>
+                ) : null}
               </div>
             </aside>
           </div>

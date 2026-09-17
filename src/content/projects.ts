@@ -33,23 +33,26 @@ export const projects: Project[] = [
   {
     slug: "ncaa-pitcher-evaluation",
     title: "NCAA Pitcher Evaluation — Data Pipeline, Modeling & Stuff+ Dashboard",
-    category: "Data Pipeline & Modeling",
+    category: "Data Engineering · Machine Learning · Baseball Analytics",
     description:
-      "End-to-end pipeline and pitcher evaluation system built on 2M+ TrackMan pitches, with modeling and dashboard workflows for actionable evaluation.",
+      "Developed an end-to-end NCAA Division I pitcher evaluation system using more than 2 million TrackMan pitches, combining data engineering, statistical modeling, pitch classification, and interactive visualization. I built a repeatable Python and SQL pipeline to ingest, clean, validate, and structure pitch-level data, then engineered features including rolling velocity measures and pitch-level run values for downstream modeling. Using R and Python, I developed pitch-clustering methods and Stuff+ / Location+ models, with the resulting metrics and pitch characteristics surfaced through an interactive dashboard for pitcher analysis.",
     technologies: [
       "Python",
       "SQL",
       "R",
       "PostgreSQL",
       "Supabase",
+      "TrackMan",
+      "Machine Learning",
       "Feature Engineering",
+      "Clustering",
       "Stuff+",
-      "Dashboards",
+      "Data Visualization",
     ],
     featured: true,
     image: {
-      src: "/images/projects/ncaa-stuffplus.svg",
-      alt: "Placeholder dashboard preview",
+      src: "/images/projects/Stuff+/Screenshot 2026-09-17 130011.png",
+      alt: "NCAA pitcher evaluation dashboard",
     },
     sections: {
       overview:
@@ -139,7 +142,7 @@ export const projects: Project[] = [
     ],
     featured: false,
     image: {
-      src: "/images/projects/BB/scOUTs cover.png",
+      src: "/images/projects/scOUTs/scOUTs cover.png",
       alt: "scOUTs cover",
     },
     sections: {
@@ -232,8 +235,8 @@ export const projects: Project[] = [
     ],
     featured: false,
     image: {
-      src: "/images/projects/2026-mlb-all-star-game-logo-philadelphia-phillies-sportslogosnet-feat-111853z-768x499.jpg",
-      alt: "2026 MLB All-Star Game logo",
+      src: "/images/2026 All Star Game.jpg",
+      alt: "2026 MLB All-Star Game",
     },
     links: {
       reportPdf: "/documents/ML MLB All Star Report.pdf",
