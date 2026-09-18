@@ -246,7 +246,7 @@ export default async function ProjectDetailPage({
                         "Data Quality: Resolved missing identifiers, inconsistent values, team mappings, and other issues required to create trustworthy model-ready data.",
                         "Feature Engineering: Created pitcher- and pitch-level features including rolling velocity measures, pitcher characteristics, count/context variables, and pitch-level run values.",
                         "Pitch Classification: Tested clustering methodologies using pitch velocity and movement characteristics and compared results against manual classifications and TrackMan's automated tagging.",
-                        "Model Development: Developed Stuff+ and Location+ modeling workflows designed to evaluate pitch quality using physical pitch characteristics and game context.",
+                        "Model Development: Developed Stuff+ modeling workflows designed to evaluate pitch quality using physical pitch characteristics and game context.",
                         "Dashboard: Built an interactive pitcher-report interface that combines Stuff+ grades, movement profiles, pitch-cluster characteristics, and other evaluation metrics in one place.",
                       ].map((x) => (
                         <li key={x} className="flex gap-3">
@@ -263,7 +263,7 @@ export default async function ProjectDetailPage({
                       The project was built iteratively rather than around a
                       single model. Pitch classifications were tested across
                       pitchers and compared against existing labels, while
-                      Stuff+ and Location+ models were developed from
+                      Stuff+ models were developed from
                       model-ready TrackMan features and pitch-level run value
                       outcomes. The objective was to create a system that could
                       be evaluated, adjusted, and expanded as additional NCAA
