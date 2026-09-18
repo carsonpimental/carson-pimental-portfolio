@@ -35,7 +35,7 @@ export const projects: Project[] = [
     title: "NCAA Pitcher Evaluation — Data Pipeline, Modeling & Stuff+ Dashboard",
     category: "Data Engineering · Machine Learning · Baseball Analytics",
     description:
-      "Developed an end-to-end NCAA Division I pitcher evaluation system using more than 2 million TrackMan pitches, combining data engineering, statistical modeling, pitch classification, and interactive visualization. I built a repeatable Python and SQL pipeline to ingest, clean, validate, and structure pitch-level data, then engineered features including rolling velocity measures and pitch-level run values for downstream modeling. Using R and Python, I developed pitch-clustering methods and Stuff+ / Location+ models, with the resulting metrics and pitch characteristics surfaced through an interactive dashboard for pitcher analysis.",
+      "Developed an end-to-end NCAA Division I pitcher evaluation system using more than 2 million TrackMan pitches, combining data engineering, statistical modeling, pitch classification, and interactive visualization. I built a repeatable Python and SQL pipeline to ingest, clean, validate, and structure pitch-level data, then engineered features including rolling velocity measures and pitch-level run values for downstream modeling. Using R and Python, I developed pitch-clustering methods and Stuff+ models, with the resulting metrics and pitch characteristics surfaced through an interactive dashboard for pitcher analysis.",
     technologies: [
       "Python",
       "SQL",
@@ -62,9 +62,9 @@ export const projects: Project[] = [
       data:
         "2M+ TrackMan pitches with pitcher, pitch, and ball-flight features. Includes multi-source ingestion, cleaning, standardization, and validation checks to ensure consistency across seasons and parks.",
       approach:
-        "Design a repeatable pipeline from raw ingestion to model-ready tables, then build pitcher-level views that combine pitch-level run values, rolling velocity metrics, clustering, and Stuff+/Location+ style modeling.",
+        "Design a repeatable pipeline from raw ingestion to model-ready tables, then build pitcher-level views that combine pitch-level run values, rolling velocity metrics, clustering, and Stuff+ style modeling.",
       methods:
-        "PostgreSQL/Supabase-backed warehouse; Python ingestion + QC; feature engineering for movement, velocity, release, and context; pitch clustering; pitch-level run values; model training and calibration for Stuff+/Location+ style outputs; dashboard-oriented aggregations.",
+        "PostgreSQL/Supabase-backed warehouse; Python ingestion + QC; feature engineering for movement, velocity, release, and context; pitch clustering; pitch-level run values; model training and calibration for Stuff+ style outputs; dashboard-oriented aggregations.",
       results:
         "A unified dataset and modeling workflow that supports interactive pitcher analysis. Designed for extensibility (new seasons, new features, new model versions) with repeatable QA.",
       application:

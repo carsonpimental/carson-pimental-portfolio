@@ -240,8 +240,8 @@ export default async function ProjectDetailPage({
                     </div>
 
                     <p className="text-xs text-zinc-500 [font-family:var(--font-mono)]">
-                      Comparison of model-based clustering, manual pitch
-                      classification, and TrackMan automated tagging.
+                      Comparison of manual pitch classifications, Trackman's
+                      automated tagging feature and my model-based clustering
                     </p>
                   </div>
                 </>
