@@ -29,7 +29,7 @@ export default async function ProjectDetailPage({
     <div>
       <section className="border-b border-white/10">
         <Container className="py-12 sm:py-16">
-          <div className="space-y-6">
+          <div className="mx-auto max-w-[1100px] space-y-6">
             <div className="flex flex-wrap items-center gap-2">
               <Tag>{project.category}</Tag>
               {project.featured ? <Tag>Featured</Tag> : null}
@@ -38,7 +38,7 @@ export default async function ProjectDetailPage({
             <h1 className="text-3xl font-semibold tracking-tight text-zinc-50 sm:text-4xl [font-family:var(--font-display)]">
               {project.title}
             </h1>
-            <p className="max-w-3xl text-sm leading-7 text-zinc-400 sm:text-base">
+            <p className="text-sm leading-7 text-zinc-400 sm:text-base">
               {project.description}
             </p>
 
@@ -53,8 +53,82 @@ export default async function ProjectDetailPage({
 
       <section>
         <Container className="py-12 sm:py-16">
-          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.6fr_0.9fr]">
-            <div className="space-y-10">
+          <div className="mx-auto max-w-6xl space-y-10">
+            {isNCAA ? (
+              <div className="mx-auto w-full max-w-[560px] overflow-visible rounded-2xl border border-white/10 bg-white/5">
+                <img
+                  src={project.image.src}
+                  alt={project.image.alt}
+                  className="block h-auto w-full"
+                />
+              </div>
+            ) : (
+              <div className="mx-auto w-full max-w-[560px] overflow-hidden rounded-2xl border border-white/10 bg-black">
+                <div className="relative aspect-square">
+                  <Image
+                    src={
+                      isScouts
+                        ? "/images/projects/scOUTs/scOUTs cover.png"
+                        : project.image.src
+                    }
+                    alt={project.image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 1100px, 100vw"
+                    priority
+                  />
+                </div>
+              </div>
+            )}
+
+            {hasLinks ? (
+              <div className="mx-auto max-w-[1100px]">
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  {isAllStar && project.links?.reportPdf ? (
+                    <a
+                      href={project.links.reportPdf}
+                      className="inline-flex items-center justify-center rounded-md border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-zinc-50 transition hover:border-white/40 hover:bg-white/15"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Full Project Report
+                    </a>
+                  ) : null}
+                  {isFarmerBoys && project.links?.reportPdf ? (
+                    <a
+                      href={project.links.reportPdf}
+                      className="inline-flex items-center justify-center rounded-md border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-zinc-50 transition hover:border-white/40 hover:bg-white/15"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Full Client Report
+                    </a>
+                  ) : null}
+                  {project.links?.github ? (
+                    <a
+                      href={project.links.github}
+                      className="inline-flex items-center justify-center rounded-md border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-zinc-50 transition hover:border-white/40 hover:bg-white/15"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub
+                    </a>
+                  ) : null}
+                  {project.links?.external ? (
+                    <a
+                      href={project.links.external}
+                      className="inline-flex items-center justify-center rounded-md border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-zinc-50 transition hover:border-white/40 hover:bg-white/15"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      External
+                    </a>
+                  ) : null}
+                </div>
+              </div>
+            ) : null}
+
+            <div className="mx-auto max-w-[1100px] space-y-10">
               {isAllStar ? (
                 <>
                   <div className="space-y-4">
@@ -79,7 +153,7 @@ export default async function ProjectDetailPage({
                     </ul>
                   </div>
 
-                  <div className="grid gap-6 md:grid-cols-2">
+                  <div className="mx-auto w-full max-w-[740px]">
                     <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
                       <p className="text-sm font-medium text-zinc-50">Results</p>
                       <dl className="mt-4 grid gap-3 text-sm">
@@ -127,21 +201,18 @@ export default async function ProjectDetailPage({
                     ].map((img) => (
                       <div
                         key={img.src}
-                        className="overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+                        className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5"
                       >
                         <div className="flex items-center justify-between gap-3 border-b border-white/10 px-5 py-4">
                           <p className="text-sm font-medium text-zinc-50">
                             {img.title}
                           </p>
-                          <p className="text-xs text-zinc-500">{img.src}</p>
                         </div>
-                        <div className="relative aspect-[16/9]">
-                          <Image
+                        <div className="overflow-visible bg-white/5">
+                          <img
                             src={img.src}
                             alt={img.alt}
-                            fill
-                            className="object-contain bg-black"
-                            sizes="(min-width: 1024px) 900px, 100vw"
+                            className="block h-auto w-full"
                           />
                         </div>
                       </div>
@@ -153,19 +224,6 @@ export default async function ProjectDetailPage({
               {isNCAA ? (
                 <>
                   <div className="space-y-6">
-                    <div className="overflow-hidden rounded-2xl border border-white/10 bg-black">
-                      <div className="relative aspect-[16/9]">
-                        <Image
-                          src="/images/projects/Stuff+/Screenshot 2026-09-17 130011.png"
-                          alt="NCAA pitcher evaluation dashboard"
-                          fill
-                          className="object-contain bg-black"
-                          sizes="(min-width: 1024px) 900px, 100vw"
-                          priority
-                        />
-                      </div>
-                    </div>
-
                     <p className="text-xs text-zinc-500 [font-family:var(--font-mono)]">
                       Pitcher Report Dashboard — combines movement profiles,
                       Stuff+ grades, and pitch-cluster characteristics into a
@@ -227,16 +285,12 @@ export default async function ProjectDetailPage({
                       further refinement.
                     </p>
 
-                    <div className="overflow-hidden rounded-2xl border border-white/10 bg-black">
-                      <div className="relative aspect-[16/9]">
-                        <Image
-                          src="/images/projects/Stuff+/Screenshot 2026-09-17 132335.png"
-                          alt="Pitch classification comparison"
-                          fill
-                          className="object-contain bg-black"
-                          sizes="(min-width: 1024px) 900px, 100vw"
-                        />
-                      </div>
+                    <div className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-black">
+                      <img
+                        src="/images/projects/Stuff+/Screenshot 2026-09-17 132335.png"
+                        alt="Pitch classification comparison"
+                        className="block h-auto w-full"
+                      />
                     </div>
 
                     <p className="text-xs text-zinc-500 [font-family:var(--font-mono)]">
@@ -254,7 +308,7 @@ export default async function ProjectDetailPage({
                     <ul className="space-y-2 text-sm text-zinc-300 sm:text-base">
                       {[
                         "Model Library: Evaluated a broad set of statistical and machine-learning models, including ETS, ETS Damped, OLS variants, LightGBM, XGBoost, Random Forest, and Extra Trees.",
-                        "Ensemble Optimization: Tested tens of thousands of weight combinations across finalist models to identify the strongest blended forecasts.",
+                        "Ensemble Optimization: Tested 46,000+ weight combinations across finalist models to identify the strongest blended forecasts.",
                         "Rolling Validation: Used 40 rolling 13-week backtest windows instead of relying on a single holdout period, producing 520 out-of-sample predictions across a full fiscal year.",
                         "Feature Engineering: Built lag, rolling-average, momentum, trend, year-over-year, seasonal, and holiday features.",
                         "Separate Transaction Pipeline: Built a dedicated transaction model with a richer feature set because transaction behavior followed different patterns than sales.",
@@ -270,7 +324,7 @@ export default async function ProjectDetailPage({
                     </ul>
                   </div>
 
-                  <div className="grid gap-6 md:grid-cols-2">
+                  <div className="mx-auto w-full max-w-[740px]">
                     <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
                       <p className="text-sm font-medium text-zinc-50">Results</p>
                       <dl className="mt-4 grid gap-3 text-sm">
@@ -327,21 +381,18 @@ export default async function ProjectDetailPage({
                     ].map((img) => (
                       <div
                         key={img.src}
-                        className="overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+                        className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5"
                       >
                         <div className="flex items-center justify-between gap-3 border-b border-white/10 px-5 py-4">
                           <p className="text-sm font-medium text-zinc-50">
                             {img.title}
                           </p>
-                          <p className="text-xs text-zinc-500">{img.src}</p>
                         </div>
-                        <div className="relative aspect-[16/9]">
-                          <Image
+                        <div className="overflow-visible bg-white/5">
+                          <img
                             src={img.src}
                             alt={img.alt}
-                            fill
-                            className="object-contain bg-black"
-                            sizes="(min-width: 1024px) 900px, 100vw"
+                            className="block h-auto w-full"
                           />
                         </div>
                       </div>
@@ -389,20 +440,18 @@ export default async function ProjectDetailPage({
                     ].map((img) => (
                       <div
                         key={img.src}
-                        className="overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+                        className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5"
                       >
                         <div className="border-b border-white/10 px-5 py-4">
                           <p className="text-sm font-medium text-zinc-50">
                             {img.title}
                           </p>
                         </div>
-                        <div className="relative aspect-[16/9]">
-                          <Image
+                        <div className="overflow-visible bg-white/5">
+                          <img
                             src={img.src}
                             alt={img.alt}
-                            fill
-                            className="object-contain bg-black"
-                            sizes="(min-width: 1024px) 900px, 100vw"
+                            className="block h-auto w-full"
                           />
                         </div>
                       </div>
@@ -462,20 +511,18 @@ export default async function ProjectDetailPage({
                       ].map((img) => (
                         <div
                           key={img.src}
-                          className="overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+                          className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5"
                         >
                           <div className="border-b border-white/10 px-5 py-4">
                             <p className="text-sm font-medium text-zinc-50">
                               {img.title}
                             </p>
                           </div>
-                          <div className="relative aspect-[16/9]">
-                            <Image
+                          <div className="overflow-visible bg-white/5">
+                            <img
                               src={img.src}
                               alt={img.alt}
-                              fill
-                              className="object-contain bg-black"
-                              sizes="(min-width: 1024px) 900px, 100vw"
+                              className="block h-auto w-full"
                             />
                           </div>
                         </div>
@@ -492,19 +539,17 @@ export default async function ProjectDetailPage({
                         movement, and usage.
                       </p>
 
-                      <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                      <div className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5">
                         <div className="border-b border-white/10 px-5 py-4">
                           <p className="text-sm font-medium text-zinc-50">
                             Comparison output
                           </p>
                         </div>
-                        <div className="relative aspect-[16/9]">
-                          <Image
+                        <div className="overflow-visible bg-white/5">
+                          <img
                             src="/images/projects/DEVIATIONS/Freddy Peralta with Rays.jpeg"
                             alt="Freddy Peralta comparison"
-                            fill
-                            className="object-contain bg-black"
-                            sizes="(min-width: 1024px) 900px, 100vw"
+                            className="block h-auto w-full"
                           />
                         </div>
                       </div>
@@ -586,78 +631,6 @@ export default async function ProjectDetailPage({
                 </>
               ) : null}
             </div>
-
-            <aside className="space-y-4">
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-                <div className="relative aspect-square">
-                  <Image
-                    src={
-                      isScouts
-                        ? "/images/projects/scOUTs/scOUTs cover.png"
-                        : project.image.src
-                    }
-                    alt={project.image.alt}
-                    fill
-                    className={
-                      isFarmerBoys
-                        ? "object-contain object-center bg-black"
-                        : isScouts
-                          ? "object-contain object-center bg-black"
-                        : "object-cover"
-                    }
-                    sizes="(min-width: 1024px) 400px, 100vw"
-                    priority
-                  />
-                </div>
-                {hasLinks ? (
-                  <div className="space-y-3 p-5">
-                    <p className="text-sm font-medium text-zinc-50">Links</p>
-                    <div className="space-y-2 text-sm">
-                      {isAllStar && project.links?.reportPdf ? (
-                        <a
-                          href={project.links.reportPdf}
-                          className="inline-flex w-full items-center justify-center rounded-md border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-zinc-50 transition hover:border-white/25 hover:bg-white/10"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          View Full Project Report
-                        </a>
-                      ) : null}
-                      {isFarmerBoys && project.links?.reportPdf ? (
-                        <a
-                          href={project.links.reportPdf}
-                          className="inline-flex w-full items-center justify-center rounded-md border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-zinc-50 transition hover:border-white/25 hover:bg-white/10"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          View Full Client Report
-                        </a>
-                      ) : null}
-                      {project.links?.github ? (
-                        <a
-                          href={project.links.github}
-                          className="block text-zinc-300 transition hover:text-zinc-50"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          GitHub
-                        </a>
-                      ) : null}
-                      {project.links?.external ? (
-                        <a
-                          href={project.links.external}
-                          className="block text-zinc-300 transition hover:text-zinc-50"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          External
-                        </a>
-                      ) : null}
-                    </div>
-                  </div>
-                ) : null}
-              </div>
-            </aside>
           </div>
         </Container>
       </section>

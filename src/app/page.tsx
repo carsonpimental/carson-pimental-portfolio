@@ -186,23 +186,28 @@ export default function Home() {
                   ) : null}
                 </div>
 
-                <div className="mx-auto w-full max-w-md overflow-hidden border border-white/10 bg-black">
-                  <div className="relative aspect-square">
-                    <Image
+                {p.slug === "ncaa-pitcher-evaluation" ? (
+                  <div className="mx-auto w-full max-w-md overflow-visible border border-white/10 bg-white/5">
+                    <img
                       src={p.image.src}
                       alt={p.image.alt}
-                      fill
-                      className={
-                        p.slug === "ncaa-pitcher-evaluation"
-                          ? "object-contain"
-                          : "object-cover"
-                      }
-                      style={p.slug === "ncaa-pitcher-evaluation" ? { objectPosition: "50% 50%" } : undefined}
-                      sizes="(min-width: 1024px) 900px, 100vw"
-                      priority={idx === 0}
+                      className="block h-auto w-full"
                     />
                   </div>
-                </div>
+                ) : (
+                  <div className="mx-auto w-full max-w-md overflow-hidden border border-white/10 bg-black">
+                    <div className="relative aspect-square">
+                      <Image
+                        src={p.image.src}
+                        alt={p.image.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(min-width: 1024px) 900px, 100vw"
+                        priority={idx === 0}
+                      />
+                    </div>
+                  </div>
+                )}
 
                 <div className="space-y-3 text-center">
                   <h2 className="text-2xl font-semibold tracking-tight text-zinc-50 sm:text-3xl [font-family:var(--font-display)]">
