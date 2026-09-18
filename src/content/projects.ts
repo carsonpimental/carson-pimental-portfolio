@@ -51,7 +51,7 @@ export const projects: Project[] = [
     ],
     featured: true,
     image: {
-      src: "/images/projects/Stuff+/Screenshot 2026-09-17 153155.png",
+      src: "/images/projects/stuff-plus/ncaa-dashboard.png",
       alt: "NCAA pitcher evaluation dashboard",
     },
     sections: {

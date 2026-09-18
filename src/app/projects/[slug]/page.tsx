@@ -287,7 +287,7 @@ export default async function ProjectDetailPage({
 
                     <div className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-black">
                       <img
-                        src="/images/projects/Stuff+/Screenshot 2026-09-17 132335.png"
+                        src="/images/projects/stuff-plus/pitch-classification.png"
                         alt="Pitch classification comparison"
                         className="block h-auto w-full"
                       />

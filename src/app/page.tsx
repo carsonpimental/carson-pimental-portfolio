@@ -125,7 +125,7 @@ export default function Home() {
               <style>{`.reel::-webkit-scrollbar{display:none;}`}</style>
 
               {[
-                "/images/projects/Stuff+/Screenshot 2026-09-17 150728.png",
+                "/images/projects/stuff-plus/ncaa-preview.png",
                 "/images/projects/banner/Screenshot 2026-09-17 134808.png",
                 "/images/projects/BB/Screenshot 2026-09-17 151207.png",
                 "/images/projects/banner/Screenshot 2026-09-17 134722.png",
