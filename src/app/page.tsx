@@ -34,11 +34,13 @@ export default function Home() {
             <div className="flex flex-wrap justify-center gap-x-3 gap-y-2 text-sm text-zinc-400 [font-family:var(--font-mono)]">
               {[
                 "Python",
-                "SQL",
                 "R",
-                "Machine Learning",
-                "Statistical Modeling",
-                "Dashboards",
+                "SQL",
+                "Excel",
+                "Tableau",
+                "Next.js",
+                "Vercel",
+                "Microsoft Office",
               ].map((x, idx) => (
                 <span key={x} className="inline-flex items-center">
                   {idx === 0 ? null : (
@@ -91,7 +93,7 @@ export default function Home() {
                   </p>
                   <p className="text-zinc-500 [font-family:var(--font-mono)]">
                     Data Science · Machine Learning · Statistical Modeling ·
-                    Python · SQL
+                    Forecasting
                   </p>
                   <p className="text-zinc-400">GPA: 3.9</p>
                 </div>
@@ -135,7 +137,7 @@ export default function Home() {
                   key={src}
                   className="shrink-0 [scroll-snap-align:start]"
                 >
-                  <div className="h-[280px] w-[85vw] overflow-hidden rounded-md border border-white/10 bg-black sm:h-[320px] sm:w-auto lg:h-[360px]">
+                  <div className="h-[240px] w-[82vw] overflow-hidden rounded-md border border-white/10 bg-black sm:h-[280px] sm:w-auto lg:h-[320px]">
                     <Image
                       src={src}
                       alt="Project screenshot"

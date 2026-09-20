@@ -32,7 +32,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "ncaa-pitcher-evaluation",
-    title: "NCAA Pitcher Evaluation — Data Pipeline, Modeling & Stuff+ Dashboard",
+    title: "NCAA Data Pipeline, Modeling & Stuff+ Dashboard",
     category: "Data Engineering · Machine Learning · Baseball Analytics",
     description:
       "Developed an end-to-end NCAA Division I pitcher evaluation system using more than 2 million TrackMan pitches, combining data engineering, statistical modeling, pitch classification, and interactive visualization. I built a repeatable Python and SQL pipeline to ingest, clean, validate, and structure pitch-level data, then engineered features including rolling velocity measures and pitch-level run values for downstream modeling. Using R and Python, I developed pitch-clustering methods and Stuff+ models, with the resulting metrics and pitch characteristics surfaced through an interactive dashboard for pitcher analysis.",

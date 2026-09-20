@@ -26,6 +26,7 @@
 
 html {
   background: var(--background);
+  font-size: 80%;
 }
 
 body {
