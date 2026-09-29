@@ -95,7 +95,7 @@ export default function Home() {
                     Data Science · Machine Learning · Statistical Modeling ·
                     Forecasting
                   </p>
-                  <p className="text-zinc-400">GPA: 3.9</p>
+                  <p className="text-zinc-400">Dean's Scholar</p>
                 </div>
                 <div className="space-y-1">
                   <p className="text-zinc-50">University of California, Irvine</p>
@@ -105,7 +105,7 @@ export default function Home() {
                   <p className="text-zinc-500 [font-family:var(--font-mono)]">
                     Quantitative Economics · Econometrics · Statistics
                   </p>
-                  <p className="text-zinc-400">GPA: 3.7</p>
+                  <p className="text-zinc-400"></p>
                 </div>
               </div>
             </div>
