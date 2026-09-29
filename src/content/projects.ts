@@ -96,7 +96,7 @@ export const projects: Project[] = [
     ],
     featured: true,
     image: {
-      src: "/images/projects/DEVIATIONS/Dev Cover.png",
+      src: "/images/projects/New Deviations/Screenshot 2026-09-28 163523.png",
       alt: "MLB Deviations cover",
     },
     links: {

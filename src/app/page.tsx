@@ -128,7 +128,7 @@ export default function Home() {
 
               {[
                 "/images/projects/stuff-plus/ncaa-preview.png",
-                "/images/projects/banner/Screenshot 2026-09-17 134808.png",
+                "/images/projects/banner/Screenshot 2026-09-28 161213.png",
                 "/images/projects/BB/Screenshot 2026-09-17 151207.png",
                 "/images/projects/banner/Screenshot 2026-09-17 134722.png",
                 "/images/projects/banner/Screenshot 2026-09-17 134605.png",

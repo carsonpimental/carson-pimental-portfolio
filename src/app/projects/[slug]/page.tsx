@@ -21,6 +21,8 @@ export default async function ProjectDetailPage({
   const isDeviations = slug === "mlb-deviations";
   const isNCAA = slug === "ncaa-pitcher-evaluation";
 
+  const useSmallTopCover = isDeviations || isScouts || isFarmerBoys || isAllStar;
+
   const hasLinks = Boolean(
     project.links?.reportPdf || project.links?.github || project.links?.external,
   );
@@ -63,13 +65,19 @@ export default async function ProjectDetailPage({
                 />
               </div>
             ) : (
-              <div className="mx-auto w-full max-w-[560px] overflow-hidden rounded-2xl border border-white/10 bg-black">
+              <div
+                className={`mx-auto w-full overflow-hidden rounded-2xl border border-white/10 bg-black ${
+                  useSmallTopCover ? "max-w-[360px]" : "max-w-[560px]"
+                }`}
+              >
                 <div className="relative aspect-square">
                   <Image
                     src={
-                      isScouts
-                        ? "/images/projects/scOUTs/scOUTs cover.png"
-                        : project.image.src
+                      isDeviations
+                        ? "/images/projects/DEVIATIONS/Dev Cover.png"
+                        : isScouts
+                          ? "/images/projects/scOUTs/scOUTs cover.png"
+                          : project.image.src
                     }
                     alt={project.image.alt}
                     fill
@@ -486,27 +494,25 @@ export default async function ProjectDetailPage({
                     <SectionTitle title="Example Analyses" />
 
                     <div className="space-y-4">
-                      <p className="text-sm font-medium text-zinc-50">
-                        Cade Cavalli
+                      <p className="text-base font-semibold text-zinc-50 sm:text-lg">
+                        Mackenzie Gore
                       </p>
                       <p className="text-sm leading-7 text-zinc-400">
-                        This example compares a broader 2025 vs. 2026 period and
-                        highlights substantial changes in release
-                        characteristics and arsenal usage. The metrics table
-                        demonstrates how the application ranks changes by
-                        z-score and interpretation level.
+                        Mackenzie Gore 2025 (Nationals) vs 2026 (Rangers).
                       </p>
 
-                      {[ 
+                      {[
                         {
-                          title: "2025 vs 2026 comparison",
-                          src: "/images/projects/DEVIATIONS/Cade Cavalli 2025 v 2026.jpeg",
-                          alt: "Cade Cavalli 2025 vs 2026 comparison",
+                          title: "Player report",
+                          src: "/images/projects/New Deviations/IMG_4517.PNG",
+                          alt: "Mackenzie Gore player report (2025 vs 2026)",
+                          note: "Player report output.",
                         },
                         {
-                          title: "Ranked metrics (z-scores)",
-                          src: "/images/projects/DEVIATIONS/Cade Cavalli Metrics.jpeg",
-                          alt: "Cade Cavalli metrics ranked by z-score",
+                          title: "Complete metrics table (z-scores)",
+                          src: "/images/projects/New Deviations/IMG_4518.PNG",
+                          alt: "Mackenzie Gore complete metrics table ranked by z-score",
+                          note: "Complete metrics table listing all notable, significant, and very unusual changes (ranked by z-score).",
                         },
                       ].map((img) => (
                         <div
@@ -525,34 +531,61 @@ export default async function ProjectDetailPage({
                               className="block h-auto w-full"
                             />
                           </div>
+                          <div className="px-5 py-3">
+                            <p className="text-xs leading-6 text-zinc-500">
+                              {img.note}
+                            </p>
+                          </div>
                         </div>
                       ))}
                     </div>
 
                     <div className="space-y-4">
-                      <p className="text-sm font-medium text-zinc-50">
-                        Freddy Peralta
+                      <p className="text-base font-semibold text-zinc-50 sm:text-lg">
+                        Michael Soroka
                       </p>
                       <p className="text-sm leading-7 text-zinc-400">
-                        This example compares two shorter stretches and
-                        surfaces more subtle changes in pitch velocity,
-                        movement, and usage.
+                        Michael Soroka 2025 (Nationals/Cubs) vs 2026
+                        (Diamondbacks).
                       </p>
 
-                      <div className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-                        <div className="border-b border-white/10 px-5 py-4">
-                          <p className="text-sm font-medium text-zinc-50">
-                            Comparison output
-                          </p>
+                      {[
+                        {
+                          title: "Player report",
+                          src: "/images/projects/New Deviations/IMG_4593.PNG",
+                          alt: "Michael Soroka player report (2025 vs 2026)",
+                          note: "Player report output.",
+                        },
+                        {
+                          title: "Complete metrics table (z-scores)",
+                          src: "/images/projects/New Deviations/IMG_4594.PNG",
+                          alt: "Michael Soroka complete metrics table ranked by z-score",
+                          note: "Complete metrics table listing all notable, significant, and very unusual changes (ranked by z-score).",
+                        },
+                      ].map((img) => (
+                        <div
+                          key={img.src}
+                          className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+                        >
+                          <div className="border-b border-white/10 px-5 py-4">
+                            <p className="text-sm font-medium text-zinc-50">
+                              {img.title}
+                            </p>
+                          </div>
+                          <div className="overflow-visible bg-white/5">
+                            <img
+                              src={img.src}
+                              alt={img.alt}
+                              className="block h-auto w-full"
+                            />
+                          </div>
+                          <div className="px-5 py-3">
+                            <p className="text-xs leading-6 text-zinc-500">
+                              {img.note}
+                            </p>
+                          </div>
                         </div>
-                        <div className="overflow-visible bg-white/5">
-                          <img
-                            src="/images/projects/DEVIATIONS/Freddy Peralta with Rays.jpeg"
-                            alt="Freddy Peralta comparison"
-                            className="block h-auto w-full"
-                          />
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
 
