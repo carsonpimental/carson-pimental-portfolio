@@ -86,7 +86,7 @@ export const projects: Project[] = [
     title: "MLB Deviations",
     category: "Full-Stack Baseball Analytics · Statcast · Change Detection",
     description:
-      "Developed MLB Deviations, a full-stack pitcher analysis application that compares MLB pitchers across custom date ranges and automatically surfaces meaningful changes in pitch characteristics. The platform processes Statcast pitch-level data to compare velocity, movement, release traits, spin characteristics, and pitch usage, while using z-scores to rank the most unusual changes. The final interface combines statistical comparisons with movement and usage visualizations to make arsenal changes easier to identify and communicate.",
+      "A full-stack application for detecting meaningful changes in MLB pitcher arsenals across custom date ranges. A Python/FastAPI backend processes Statcast pitch-level data to compare velocity, movement, release traits, spin characteristics, and usage, ranking the most unusual changes by z-score; a Next.js frontend pairs the statistical comparisons with movement and usage visualizations.",
     shortDescription:
       "A full-stack app that detects meaningful changes in MLB pitcher arsenals.",
     technologies: [
@@ -133,10 +133,10 @@ export const projects: Project[] = [
   },
   {
     slug: "scouts-defensive-alignments",
-    title: "scOUTs - Defensive Alignments",
+    title: "scOUTs Defensive Alignments",
     category: "Baseball Analytics · TrackMan · Clustering · Defensive Positioning",
     description:
-      "Developed scOUTs, a Next.js defensive positioning application that transforms raw TrackMan batted-ball data into interactive spray charts and opponent scouting reports. The platform cleans and combines TrackMan exports, classifies batted balls into infield and outfield groups, and uses cluster-based epicenters to identify common landing zones. Final reports translate those patterns into practical depth, angle, and directional positioning guidance that coaches and players can use for game preparation.",
+      "A Next.js defensive positioning application that converts raw TrackMan batted-ball exports into interactive spray charts and opponent scouting reports. Rule-based classification groups batted balls into infield and outfield zones, cluster-based epicenters summarize common landing zones, and generated reports translate spray tendencies into depth, angle, and directional guidance for game preparation.",
     shortDescription:
       "Interactive spray charts and scouting reports for defensive positioning.",
     technologies: [
@@ -180,7 +180,7 @@ export const projects: Project[] = [
     title: "Farmer Boys Forecasting & Analytics Platform",
     category: "Time Series Forecasting · Machine Learning · Model Validation",
     description:
-      "Built and validated an ensemble forecasting model across six candidate models and 40 rolling backtests, evaluating and stress-testing competing approaches to identify the most predictive blend. I also applied OLS decomposition to separate underlying performance from seasonal and calendar noise, creating cleaner baselines and adjusted metrics for decision-making. The final models were deployed through a Streamlit web app that translated complex outputs into simple, actionable information for non-technical stakeholders across the organization.",
+      "An ensemble forecasting platform for weekly sales and transaction planning. Six candidate model families were compared across 40 rolling backtests and combined through weight-optimized ensembles; OLS decomposition separates underlying performance from seasonal and calendar noise, and a Streamlit app delivers forecasts and reports to non-technical stakeholders.",
     shortDescription:
       "Ensemble forecasting platform for weekly sales and transaction planning.",
     technologies: [
@@ -231,7 +231,7 @@ export const projects: Project[] = [
     title: "Predicting the 2026 MLB All-Star Team",
     category: "Machine Learning · Model Validation · Baseball Analytics",
     description:
-      "Developed a machine learning framework to predict 2026 MLB All-Star selections, comparing multiple classification approaches and tuning models through stratified cross-validation and GridSearchCV. To improve performance on the imbalanced target, I tested SMOTE, created a custom F-beta evaluation metric, and optimized classification thresholds based on the cost of missed All-Stars versus false positives. The selected model was then applied to Steamer projections to produce player-level All-Star probabilities and final predictions.",
+      "A machine learning framework for predicting 2026 MLB All-Star selections from player performance data. Classification models were compared under stratified cross-validation and GridSearchCV; SMOTE, a recall-weighted F-beta objective, and threshold tuning addressed the imbalanced target, and the selected model was applied to Steamer projections to produce player-level All-Star probabilities.",
     shortDescription:
       "Machine learning predictions for the 2026 MLB All-Star roster.",
     technologies: [
