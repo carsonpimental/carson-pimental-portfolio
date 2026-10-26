@@ -21,16 +21,18 @@ export default function ResearchPage() {
   return (
     <Container className="py-14 sm:py-20">
       <div className="space-y-10">
-        <SectionTitle
-          title="Research & Writing"
-          subtitle="Long-form work: formal research, methodological write-ups, and technical baseball articles (coming soon)."
-        />
+        <div className="reveal">
+          <SectionTitle
+            title="Research & Writing"
+            subtitle="Long-form work: formal research, methodological write-ups, and technical baseball articles (coming soon)."
+          />
+        </div>
 
         <div className="grid gap-6">
           {researchItems.map((r) => (
             <article
               key={r.title}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-white/20 hover:bg-white/[0.07]"
+              className="reveal rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-white/20 hover:bg-white/[0.07]"
             >
               <div className="flex flex-wrap gap-2">
                 {r.tags.map((t) => (

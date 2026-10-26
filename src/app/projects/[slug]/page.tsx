@@ -32,7 +32,7 @@ export default async function ProjectDetailPage({
     <div>
       <section className="border-b border-white/10">
         <Container className="py-12 sm:py-16">
-          <div className="mx-auto max-w-[1100px] space-y-6">
+          <div className="reveal mx-auto max-w-[1100px] space-y-6">
             <div className="flex flex-wrap items-center gap-2">
               <Tag>{project.category}</Tag>
               {project.featured ? <Tag>Featured</Tag> : null}
@@ -58,7 +58,7 @@ export default async function ProjectDetailPage({
         <Container className="py-12 sm:py-16">
           <div className="mx-auto max-w-6xl space-y-10">
             {isNCAA ? (
-              <div className="mx-auto w-full max-w-[560px] overflow-visible rounded-2xl border border-white/10 bg-white/5">
+              <div className="reveal mx-auto w-full max-w-[560px] overflow-visible rounded-2xl border border-white/10 bg-white/5">
                 <img
                   src={project.image.src}
                   alt={project.image.alt}
@@ -67,7 +67,7 @@ export default async function ProjectDetailPage({
               </div>
             ) : (
               <div
-                className={`mx-auto w-full overflow-hidden rounded-2xl border border-white/10 bg-black ${
+                className={`reveal mx-auto w-full overflow-hidden rounded-2xl border border-white/10 bg-black ${
                   useSmallTopCover ? "max-w-[360px]" : "max-w-[560px]"
                 }`}
               >
@@ -91,7 +91,7 @@ export default async function ProjectDetailPage({
             )}
 
             {hasLinks ? (
-              <div className="mx-auto max-w-[1100px]">
+              <div className="reveal mx-auto max-w-[1100px]">
                 <div className="flex flex-wrap items-center justify-center gap-3">
                   {isAllStar && project.links?.reportPdf ? (
                     <a
@@ -140,7 +140,7 @@ export default async function ProjectDetailPage({
             <div className="mx-auto max-w-[1100px] space-y-10">
               {isAllStar ? (
                 <>
-                  <div className="space-y-4">
+                  <div className="reveal space-y-4">
                     <SectionTitle title="Key Work" />
                     <ul className="space-y-2 text-sm text-zinc-300 sm:text-base">
                       {[
@@ -162,7 +162,7 @@ export default async function ProjectDetailPage({
                     </ul>
                   </div>
 
-                  <div className="mx-auto w-full max-w-[740px]">
+                  <div className="reveal mx-auto w-full max-w-[740px]">
                     <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
                       <p className="text-sm font-medium text-zinc-50">Results</p>
                       <dl className="mt-4 grid gap-3 text-sm">
@@ -189,7 +189,7 @@ export default async function ProjectDetailPage({
                     </div>
                   </div>
 
-                  <div className="space-y-6">
+                  <div className="reveal space-y-6">
                     <SectionTitle title="Visuals" />
                     {[ 
                       {
@@ -210,7 +210,7 @@ export default async function ProjectDetailPage({
                     ].map((img) => (
                       <div
                         key={img.src}
-                        className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+                        className="reveal mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5"
                       >
                         <div className="flex items-center justify-between gap-3 border-b border-white/10 px-5 py-4">
                           <p className="text-sm font-medium text-zinc-50">
@@ -232,7 +232,7 @@ export default async function ProjectDetailPage({
 
               {isNCAA ? (
                 <>
-                  <div className="space-y-6">
+                  <div className="reveal space-y-6">
                     <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                       Pitcher Report Dashboard - combines movement profiles,
                       Stuff+ grades, and pitch-cluster characteristics into a
@@ -245,7 +245,7 @@ export default async function ProjectDetailPage({
                     </p>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="reveal space-y-4">
                     <SectionTitle title="Model Development" />
                     <ul className="space-y-2 text-sm text-zinc-300 sm:text-base">
                       {[
@@ -265,13 +265,13 @@ export default async function ProjectDetailPage({
                     </ul>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="reveal space-y-4">
                     <SectionTitle title="Evaluating Pitch Classification" />
                     <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                       Used Gaussian mixture models to group pitches by velocity, IVB, and HB. Compared results against TrackMan's automated tags and manual classifications to identify errors, refine grouping decisions, and improve pitch identification accuracy.
                     </p>
 
-                    <div className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-black">
+                    <div className="reveal mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-black">
                       <img
                         src="/images/projects/stuff-plus/pitch-classification.png"
                         alt="Pitch classification comparison"
@@ -285,7 +285,7 @@ export default async function ProjectDetailPage({
                     </p>
                   </div>
 
-                  <div className="space-y-6">
+                  <div className="reveal space-y-6">
                     <SectionTitle title="Feature Showcase" />
                     <FeatureShowcase
                       features={[
@@ -351,7 +351,7 @@ export default async function ProjectDetailPage({
 
               {isFarmerBoys ? (
                 <>
-                  <div className="space-y-4">
+                  <div className="reveal space-y-4">
                     <SectionTitle title="Key Work" />
                     <ul className="space-y-2 text-sm text-zinc-300 sm:text-base">
                       {[
@@ -372,7 +372,7 @@ export default async function ProjectDetailPage({
                     </ul>
                   </div>
 
-                  <div className="mx-auto w-full max-w-[740px]">
+                  <div className="reveal mx-auto w-full max-w-[740px]">
                     <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
                       <p className="text-sm font-medium text-zinc-50">Results</p>
                       <dl className="mt-4 grid gap-3 text-sm">
@@ -398,7 +398,7 @@ export default async function ProjectDetailPage({
                     </div>
                   </div>
 
-                  <div className="space-y-6">
+                  <div className="reveal space-y-6">
                     <SectionTitle title="Visuals" />
                     {[
                       {
@@ -429,7 +429,7 @@ export default async function ProjectDetailPage({
                     ].map((img) => (
                       <div
                         key={img.src}
-                        className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+                        className="reveal mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5"
                       >
                         <div className="flex items-center justify-between gap-3 border-b border-white/10 px-5 py-4">
                           <p className="text-sm font-medium text-zinc-50">
@@ -451,7 +451,7 @@ export default async function ProjectDetailPage({
 
               {isScouts ? (
                 <>
-                  <div className="space-y-4">
+                  <div className="reveal space-y-4">
                     <SectionTitle title="Key Work" />
                     <ul className="space-y-2 text-sm text-zinc-300 sm:text-base">
                       {[
@@ -472,7 +472,7 @@ export default async function ProjectDetailPage({
                     </ul>
                   </div>
 
-                  <div className="space-y-6">
+                  <div className="reveal space-y-6">
                     <SectionTitle title="Reports" />
                     {[
                       {
@@ -488,7 +488,7 @@ export default async function ProjectDetailPage({
                     ].map((img) => (
                       <div
                         key={img.src}
-                        className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+                        className="reveal mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5"
                       >
                         <div className="border-b border-white/10 px-5 py-4">
                           <p className="text-sm font-medium text-zinc-50">
@@ -510,7 +510,7 @@ export default async function ProjectDetailPage({
 
               {isDeviations ? (
                 <>
-                  <div className="space-y-4">
+                  <div className="reveal space-y-4">
                     <SectionTitle title="Key Work" />
                     <ul className="space-y-2 text-sm text-zinc-300 sm:text-base">
                       {[
@@ -530,10 +530,10 @@ export default async function ProjectDetailPage({
                     </ul>
                   </div>
 
-                  <div className="space-y-6">
+                  <div className="reveal space-y-6">
                     <SectionTitle title="Example Analyses" />
 
-                    <div className="space-y-4">
+                    <div className="reveal space-y-4">
                       <p className="text-base font-semibold text-zinc-50 sm:text-lg">
                         Michael Soroka
                       </p>
@@ -558,7 +558,7 @@ export default async function ProjectDetailPage({
                       ].map((img) => (
                         <div
                           key={img.src}
-                          className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+                          className="reveal mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5"
                         >
                           <div className="border-b border-white/10 px-5 py-4">
                             <p className="text-sm font-medium text-zinc-50">
@@ -587,63 +587,63 @@ export default async function ProjectDetailPage({
 
               {!isAllStar && !isFarmerBoys && !isScouts && !isDeviations && !isNCAA ? (
                 <>
-                  <div className="space-y-4">
+                  <div className="reveal space-y-4">
                     <SectionTitle title="Overview" />
                     <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                       {project.sections.overview}
                     </p>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="reveal space-y-4">
                     <SectionTitle title="Problem / Question" />
                     <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                       {project.sections.problem}
                     </p>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="reveal space-y-4">
                     <SectionTitle title="Data" />
                     <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                       {project.sections.data}
                     </p>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="reveal space-y-4">
                     <SectionTitle title="Approach" />
                     <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                       {project.sections.approach}
                     </p>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="reveal space-y-4">
                     <SectionTitle title="Methods & Technology" />
                     <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                       {project.sections.methods}
                     </p>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="reveal space-y-4">
                     <SectionTitle title="Results" />
                     <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                       {project.sections.results}
                     </p>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="reveal space-y-4">
                     <SectionTitle title="Baseball / Business Application" />
                     <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                       {project.sections.application}
                     </p>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="reveal space-y-4">
                     <SectionTitle title="Visuals" />
                     <p className="text-sm leading-7 text-zinc-400 sm:text-base">
                       {project.sections.visuals}
                     </p>
                   </div>
 
-                  <div className="space-y-4">
+                  <div className="reveal space-y-4">
                     <SectionTitle title="Key Takeaways" />
                     <ul className="space-y-2 text-sm text-zinc-300 sm:text-base">
                       {project.sections.takeaways.map((x) => (

@@ -36,3 +36,24 @@ body {
     "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
   text-rendering: geometricPrecision;
 }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

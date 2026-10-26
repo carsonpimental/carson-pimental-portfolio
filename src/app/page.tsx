@@ -20,7 +20,7 @@ export default function Home() {
     <div>
       <section className="border-b border-white/10">
         <Container className="py-10 sm:py-12">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-7 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:items-start lg:gap-x-8">
+          <div className="reveal mx-auto grid max-w-6xl grid-cols-1 gap-7 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:items-start lg:gap-x-8">
             <div className="mx-auto flex w-36 shrink-0 justify-center sm:w-44 lg:w-52 lg:self-end lg:translate-y-[calc(50%+1.75rem)]">
               <img
                 src="/images/projects/top/uc_irvine_anteaters-logo_brandlogos.net_sehp4.png"
@@ -134,7 +134,7 @@ export default function Home() {
 
       <section className="border-b border-white/10">
         <Container className="py-8 sm:py-10">
-          <div className="mx-auto max-w-6xl">
+          <div className="reveal mx-auto max-w-6xl">
             <div className="mb-2 text-center">
               <SectionTitle title="Work Preview" />
             </div>
@@ -180,13 +180,13 @@ export default function Home() {
 
       <section id="projects">
         <Container className="py-10 sm:py-12">
-          <div className="mb-4 text-center">
+          <div className="reveal mb-4 text-center">
             <SectionTitle title="Projects" />
           </div>
 
           <div className="mx-auto max-w-4xl space-y-12">
             {feed.map((p, idx) => (
-              <article key={p.slug} className="space-y-6">
+              <article key={p.slug} className="reveal space-y-6">
                 <div className="flex items-baseline justify-between gap-6">
                   <div className="space-y-2">
                     <p className="text-xs text-zinc-500 [font-family:var(--font-mono)]">

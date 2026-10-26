@@ -4,13 +4,15 @@ export default function AboutPage() {
   return (
     <Container className="py-14 sm:py-20">
       <div className="space-y-12">
-        <SectionTitle
-          title="About"
-          subtitle="Baseball analytics and data science with an emphasis on building reliable systems, rigorous models, and tools that translate analysis into decisions."
-        />
+        <div className="reveal">
+          <SectionTitle
+            title="About"
+            subtitle="Baseball analytics and data science with an emphasis on building reliable systems, rigorous models, and tools that translate analysis into decisions."
+          />
+        </div>
 
         <div className="grid gap-10 lg:grid-cols-[1.4fr_0.6fr]">
-          <div className="space-y-6">
+          <div className="reveal space-y-6">
             <p className="text-sm leading-7 text-zinc-400 sm:text-base">
               I’m Carson Pimental, an early-career baseball analytics and data
               science professional pursuing MLB front-office roles. My work
@@ -42,7 +44,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <aside className="space-y-4">
+          <aside className="reveal space-y-4">
             <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.03] p-6">
               <p className="text-sm font-medium text-zinc-50">Core Stack</p>
               <div className="mt-4 flex flex-wrap gap-2">

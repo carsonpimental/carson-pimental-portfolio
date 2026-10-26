@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { RevealOnScroll } from "@/components/reveal-on-scroll";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
 
@@ -40,6 +41,7 @@ export default function RootLayout({
         className="min-h-full flex flex-col bg-black text-zinc-50"
       >
         <SiteNav />
+        <RevealOnScroll />
         <main className="flex-1">{children}</main>
         <SiteFooter />
       </body>

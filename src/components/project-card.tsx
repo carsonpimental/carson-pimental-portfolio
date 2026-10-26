@@ -19,7 +19,7 @@ export function ProjectCard({
   const imageClass = "aspect-square";
 
   return (
-    <article className={wrapper}>
+    <article className={`${wrapper} reveal`}>
       <div className={`relative mb-5 overflow-hidden rounded-xl ${imageClass}`}>
         <Image
           src={project.image.src}
