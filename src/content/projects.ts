@@ -5,6 +5,7 @@ export type Project = {
   title: string;
   category: ProjectCategory;
   description: string;
+  shortDescription: string;
   technologies: string[];
   featured: boolean;
   image: {
@@ -35,7 +36,9 @@ export const projects: Project[] = [
     title: "NCAA Data Pipeline, Modeling & Stuff+ Dashboard",
     category: "Data Engineering · Machine Learning · Baseball Analytics",
     description:
-      "Developed an end-to-end NCAA Division I pitcher evaluation system using more than 2 million TrackMan pitches, combining data engineering, statistical modeling, pitch classification, and interactive visualization. I built a repeatable Python and SQL pipeline to ingest, clean, validate, and structure pitch-level data, then engineered features including rolling velocity measures and pitch-level run values for downstream modeling. Using R and Python, I developed pitch-clustering methods and Stuff+ models, with the resulting metrics and pitch characteristics surfaced through an interactive dashboard for pitcher analysis.",
+      "An NCAA Division I pitcher evaluation system built on 2M+ TrackMan pitches. A repeatable Python/SQL pipeline handles cleaning, validation, and imputation; neural-network models predict pitch-level run values that are calibrated into Stuff+ grades and explored through an interactive dashboard.",
+    shortDescription:
+      "An NCAA pitcher evaluation platform built on 2M+ TrackMan pitches.",
     technologies: [
       "Python",
       "SQL",
@@ -51,7 +54,7 @@ export const projects: Project[] = [
     ],
     featured: true,
     image: {
-      src: "/images/projects/stuff-plus/ncaa-dashboard.png",
+      src: "/images/projects/Stuff+/ncaa-stuff-plus.vercel.app_player-profile_pitcher_id=814176&dataset=games.png",
       alt: "NCAA pitcher evaluation dashboard",
     },
     sections: {
@@ -84,6 +87,8 @@ export const projects: Project[] = [
     category: "Full-Stack Baseball Analytics · Statcast · Change Detection",
     description:
       "Developed MLB Deviations, a full-stack pitcher analysis application that compares MLB pitchers across custom date ranges and automatically surfaces meaningful changes in pitch characteristics. The platform processes Statcast pitch-level data to compare velocity, movement, release traits, spin characteristics, and pitch usage, while using z-scores to rank the most unusual changes. The final interface combines statistical comparisons with movement and usage visualizations to make arsenal changes easier to identify and communicate.",
+    shortDescription:
+      "A full-stack app that detects meaningful changes in MLB pitcher arsenals.",
     technologies: [
       "Python",
       "FastAPI",
@@ -116,7 +121,7 @@ export const projects: Project[] = [
       results:
         "A usable tool that produces repeatable change analysis outputs and supports publishing pitcher notes externally (e.g., social posts).",
       application:
-        "Useful for monitoring new pitch shapes, velo spikes/drops, usage changes, and release point shifts—supporting evaluation, scouting, and player-dev discussions.",
+        "Useful for monitoring new pitch shapes, velo spikes/drops, usage changes, and release point shifts-supporting evaluation, scouting, and player-dev discussions.",
       visuals:
         "Space reserved for application screenshots and example posts/usage from Twitter/X.",
       takeaways: [
@@ -128,10 +133,12 @@ export const projects: Project[] = [
   },
   {
     slug: "scouts-defensive-alignments",
-    title: "scOUTs – Defensive Alignments",
+    title: "scOUTs - Defensive Alignments",
     category: "Baseball Analytics · TrackMan · Clustering · Defensive Positioning",
     description:
       "Developed scOUTs, a Next.js defensive positioning application that transforms raw TrackMan batted-ball data into interactive spray charts and opponent scouting reports. The platform cleans and combines TrackMan exports, classifies batted balls into infield and outfield groups, and uses cluster-based epicenters to identify common landing zones. Final reports translate those patterns into practical depth, angle, and directional positioning guidance that coaches and players can use for game preparation.",
+    shortDescription:
+      "Interactive spray charts and scouting reports for defensive positioning.",
     technologies: [
       "TrackMan",
       "Clustering",
@@ -174,6 +181,8 @@ export const projects: Project[] = [
     category: "Time Series Forecasting · Machine Learning · Model Validation",
     description:
       "Built and validated an ensemble forecasting model across six candidate models and 40 rolling backtests, evaluating and stress-testing competing approaches to identify the most predictive blend. I also applied OLS decomposition to separate underlying performance from seasonal and calendar noise, creating cleaner baselines and adjusted metrics for decision-making. The final models were deployed through a Streamlit web app that translated complex outputs into simple, actionable information for non-technical stakeholders across the organization.",
+    shortDescription:
+      "Ensemble forecasting platform for weekly sales and transaction planning.",
     technologies: [
       "LightGBM",
       "ETS",
@@ -223,6 +232,8 @@ export const projects: Project[] = [
     category: "Machine Learning · Model Validation · Baseball Analytics",
     description:
       "Developed a machine learning framework to predict 2026 MLB All-Star selections, comparing multiple classification approaches and tuning models through stratified cross-validation and GridSearchCV. To improve performance on the imbalanced target, I tested SMOTE, created a custom F-beta evaluation metric, and optimized classification thresholds based on the cost of missed All-Stars versus false positives. The selected model was then applied to Steamer projections to produce player-level All-Star probabilities and final predictions.",
+    shortDescription:
+      "Machine learning predictions for the 2026 MLB All-Star roster.",
     technologies: [
       "Python",
       "Scikit-learn",
@@ -260,7 +271,7 @@ export const projects: Project[] = [
         "See the project page for key validation results, model comparisons, and final prediction outputs.",
       takeaways: [
         "Validate assumptions about the target before modeling.",
-        "Treat imbalanced classification as a precision-recall problem—not an accuracy problem.",
+        "Treat imbalanced classification as a precision-recall problem-not an accuracy problem.",
         "Prevent leakage with pipelines and fold-contained preprocessing.",
         "Tune thresholds to match the real objective, not the default 0.50 cutoff.",
       ],

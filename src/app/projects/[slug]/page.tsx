@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { FeatureShowcase } from "@/components/feature-showcase";
 import { Container, SectionTitle, Tag } from "@/components/ui";
 import { getProject } from "@/content/projects";
 
@@ -232,30 +233,29 @@ export default async function ProjectDetailPage({
               {isNCAA ? (
                 <>
                   <div className="space-y-6">
-                    <p className="text-xs text-zinc-500 [font-family:var(--font-mono)]">
-                      Pitcher Report Dashboard — combines movement profiles,
+                    <p className="text-sm leading-7 text-zinc-400 sm:text-base">
+                      Pitcher Report Dashboard - combines movement profiles,
                       Stuff+ grades, and pitch-cluster characteristics into a
                       single pitcher evaluation interface.
                     </p>
 
                     <p className="text-sm leading-7 text-zinc-400 sm:text-base">
-                      The project was developed independently while working
-                      directly with Baltimore Orioles Assistant General Manager
-                      Sig Mejdal on methods for evaluating NCAA Division I
-                      pitchers.
+                      Developed independently with guidance from Baltimore
+                      Orioles Assistant General Manager Sig Mejdal.
                     </p>
                   </div>
 
                   <div className="space-y-4">
-                    <SectionTitle title="Key Work" />
+                    <SectionTitle title="Model Development" />
                     <ul className="space-y-2 text-sm text-zinc-300 sm:text-base">
                       {[
-                        "Large-Scale Data Pipeline: Built a repeatable workflow for more than 2 million TrackMan pitches, including ingestion, cleaning, validation, transformation, and database storage.",
-                        "Data Quality: Resolved missing identifiers, inconsistent values, team mappings, and other issues required to create trustworthy model-ready data.",
-                        "Feature Engineering: Created pitcher- and pitch-level features including rolling velocity measures, pitcher characteristics, count/context variables, and pitch-level run values.",
-                        "Pitch Classification: Tested clustering methodologies using pitch velocity and movement characteristics and compared results against manual classifications and TrackMan's automated tagging.",
-                        "Model Development: Developed Stuff+ modeling workflows designed to evaluate pitch quality using physical pitch characteristics and game context.",
-                        "Dashboard: Built an interactive pitcher-report interface that combines Stuff+ grades, movement profiles, pitch-cluster characteristics, and other evaluation metrics in one place.",
+                        "Data Preparation: Cleaning, validation, missing-value imputation, and feature engineering across 2M+ TrackMan pitches.",
+                        "Pitch Run Values: Target variable built from changes in expected run value between counts and outcomes, measuring each pitch's contribution to run prevention.",
+                        "Feature Selection: Velocity, IVB, HB, release traits, extension, pitcher height, and recent velocity trends.",
+                        "Modeling: Separate neural networks for each pitcher-batter handedness matchup, tuned with cross-validation and regularization to limit overfitting.",
+                        "Stuff+ Calibration: Predicted run values converted to Stuff+ grades on a consistent scale across pitchers and pitch types.",
+                        "Pitch Classification: Gaussian mixture models, custom rules, and manual overrides, integrated into an automated pipeline.",
+                        "Application: Web app with pitcher dashboards, interactive pitch design, development tracking, and SHAP-based explanations.",
                       ].map((x) => (
                         <li key={x} className="flex gap-3">
                           <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-white/40" />
@@ -266,31 +266,9 @@ export default async function ProjectDetailPage({
                   </div>
 
                   <div className="space-y-4">
-                    <SectionTitle title="Modeling Approach" />
-                    <p className="text-sm leading-7 text-zinc-400 sm:text-base">
-                      The project was built iteratively rather than around a
-                      single model. Pitch classifications were tested across
-                      pitchers and compared against existing labels, while
-                      Stuff+ models were developed from
-                      model-ready TrackMan features and pitch-level run value
-                      outcomes. The objective was to create a system that could
-                      be evaluated, adjusted, and expanded as additional NCAA
-                      data became available.
-                    </p>
-                  </div>
-
-                  <div className="space-y-4">
                     <SectionTitle title="Evaluating Pitch Classification" />
                     <p className="text-sm leading-7 text-zinc-400 sm:text-base">
-                      As part of the modeling workflow, I tested pitch-clustering
-                      methods using velocity and movement characteristics and
-                      evaluated how the resulting classifications compared with
-                      both manually assigned pitch labels and TrackMan's
-                      automated tagging. Rather than treating clustering output
-                      as automatically correct, the comparison was used to
-                      identify where classifications aligned, where methods
-                      disagreed, and where the clustering methodology required
-                      further refinement.
+                      Used Gaussian mixture models to group pitches by velocity, IVB, and HB. Compared results against TrackMan's automated tags and manual classifications to identify errors, refine grouping decisions, and improve pitch identification accuracy.
                     </p>
 
                     <div className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-black">
@@ -305,6 +283,68 @@ export default async function ProjectDetailPage({
                       Comparison of manual pitch classifications, Trackman's
                       automated tagging feature and my model-based clustering
                     </p>
+                  </div>
+
+                  <div className="space-y-6">
+                    <SectionTitle title="Feature Showcase" />
+                    <FeatureShowcase
+                      features={[
+                        {
+                          kicker: "01 · PITCHER EVALUATION",
+                          title: "Pitcher Metrics & Arsenal Overview",
+                          description:
+                            "Visualizes a pitcher's arsenal through interactive movement plots, pitch usage, Stuff+ grades, and detailed pitch characteristics, allowing users to evaluate individual pitches and overall repertoire quality.",
+                          images: [
+                            {
+                              src: "/images/projects/Stuff+/localhost_3000_player-profile_pitcher_id=815158&dataset=games (1).png",
+                              alt: "Pitcher metrics and arsenal overview dashboard",
+                            },
+                          ],
+                        },
+                        {
+                          kicker: "02 · PITCH DESIGN",
+                          title: "The Blob: Interactive Pitch Design",
+                          description:
+                            "The Blob allows users to explore how changes in velocity and movement affect predicted pitch quality. Using a pitcher's existing characteristics, the model generates a Stuff+ heatmap across different IVB and HB combinations while holding other factors constant. Users can select locations on the plot to examine potential pitch adjustments and their predicted impact.",
+                          images: [
+                            {
+                              src: "/images/projects/Stuff+/localhost_3000_player-profile_pitcher_id=815158&dataset=games (3).png",
+                              alt: "The Blob pitch design setup with pitch type and velocity selection",
+                              caption: "1. Configure Pitch",
+                            },
+                            {
+                              src: "/images/projects/Stuff+/localhost_3000_player-profile_pitcher_id=815158&dataset=games (4).png",
+                              alt: "The Blob Stuff+ movement heatmap results",
+                              caption: "2. Explore Results",
+                            },
+                          ],
+                        },
+                        {
+                          kicker: "03 · DEVELOPMENT TRACKING",
+                          title: "Development Trends",
+                          description:
+                            "Tracks changes in pitch quality across individual outings, allowing users to monitor Stuff+ trends and evaluate pitcher development throughout the season.",
+                          images: [
+                            {
+                              src: "/images/projects/Stuff+/localhost_3000_player-profile_pitcher_id=815158&dataset=games (5).png",
+                              alt: "Development trends showing Stuff+ by outing",
+                            },
+                          ],
+                        },
+                        {
+                          kicker: "04 · MODEL INTERPRETATION",
+                          title: "Stuff+ Drivers (SHAP Analysis)",
+                          description:
+                            "Uses SHAP values to quantify how individual pitch characteristics positively or negatively influence predicted Stuff+ grades, depicting the factors driving pitch quality.",
+                          images: [
+                            {
+                              src: "/images/projects/Stuff+/localhost_3000_player-profile_pitcher_id=815158&dataset=games (6).png",
+                              alt: "SHAP analysis of Stuff+ drivers",
+                            },
+                          ],
+                        },
+                      ]}
+                    />
                   </div>
                 </>
               ) : null}
@@ -492,53 +532,6 @@ export default async function ProjectDetailPage({
 
                   <div className="space-y-6">
                     <SectionTitle title="Example Analyses" />
-
-                    <div className="space-y-4">
-                      <p className="text-base font-semibold text-zinc-50 sm:text-lg">
-                        Mackenzie Gore
-                      </p>
-                      <p className="text-sm leading-7 text-zinc-400">
-                        Mackenzie Gore 2025 (Nationals) vs 2026 (Rangers).
-                      </p>
-
-                      {[
-                        {
-                          title: "Player report",
-                          src: "/images/projects/New Deviations/IMG_4517.PNG",
-                          alt: "Mackenzie Gore player report (2025 vs 2026)",
-                          note: "Player report output.",
-                        },
-                        {
-                          title: "Complete metrics table (z-scores)",
-                          src: "/images/projects/New Deviations/IMG_4518.PNG",
-                          alt: "Mackenzie Gore complete metrics table ranked by z-score",
-                          note: "Complete metrics table listing all notable, significant, and very unusual changes (ranked by z-score).",
-                        },
-                      ].map((img) => (
-                        <div
-                          key={img.src}
-                          className="mx-auto w-full max-w-[740px] overflow-hidden rounded-2xl border border-white/10 bg-white/5"
-                        >
-                          <div className="border-b border-white/10 px-5 py-4">
-                            <p className="text-sm font-medium text-zinc-50">
-                              {img.title}
-                            </p>
-                          </div>
-                          <div className="overflow-visible bg-white/5">
-                            <img
-                              src={img.src}
-                              alt={img.alt}
-                              className="block h-auto w-full"
-                            />
-                          </div>
-                          <div className="px-5 py-3">
-                            <p className="text-xs leading-6 text-zinc-500">
-                              {img.note}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
 
                     <div className="space-y-4">
                       <p className="text-base font-semibold text-zinc-50 sm:text-lg">

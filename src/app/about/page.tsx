@@ -1,4 +1,4 @@
-import { Container, SectionTitle, Tag } from "@/components/ui";
+import { ButtonLink, Container, SectionTitle, Tag } from "@/components/ui";
 
 export default function AboutPage() {
   return (
@@ -14,7 +14,7 @@ export default function AboutPage() {
             <p className="text-sm leading-7 text-zinc-400 sm:text-base">
               I’m Carson Pimental, an early-career baseball analytics and data
               science professional pursuing MLB front-office roles. My work
-              focuses on end-to-end analytics: ingesting and validating data,
+              focuses on the full analytics workflow: ingesting and validating data,
               engineering features, building statistical and ML models, and
               turning results into practical tools and clear communication.
             </p>
@@ -62,14 +62,16 @@ export default function AboutPage() {
 
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <p className="text-sm font-medium text-zinc-50">Resume</p>
-              <a
-                href="/images/projects/resume/Carson%20Pimental%20Resume%20Sep.pdf"
-                className="mt-4 inline-flex items-center rounded-md border border-white/15 bg-white/5 px-4 py-2 text-sm text-zinc-50 transition hover:border-white/25 hover:bg-white/10"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View / Download
-              </a>
+              <div className="mt-4">
+                <ButtonLink
+                  href="/images/projects/resume/Carson%20Pimental%20Resume%20Sep.pdf"
+                  variant="secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View / Download
+                </ButtonLink>
+              </div>
             </div>
           </aside>
         </div>

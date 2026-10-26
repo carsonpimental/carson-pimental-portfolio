@@ -1,6 +1,6 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
-import { ButtonLink, Container, Tag } from "@/components/ui";
+import { ButtonLink, Container, SectionTitle, Tag } from "@/components/ui";
 import { projects } from "@/content/projects";
 
 export default function Home() {
@@ -20,7 +20,16 @@ export default function Home() {
     <div>
       <section className="border-b border-white/10">
         <Container className="py-10 sm:py-12">
-          <div className="mx-auto max-w-4xl space-y-7 text-center">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-7 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:items-start lg:gap-x-8">
+            <div className="mx-auto flex w-36 shrink-0 justify-center sm:w-44 lg:w-52 lg:self-end lg:translate-y-[calc(50%+1.75rem)]">
+              <img
+                src="/images/projects/top/uc_irvine_anteaters-logo_brandlogos.net_sehp4.png"
+                alt="UC Irvine Anteaters logo"
+                className="h-24 w-auto object-contain sm:h-32 lg:h-40"
+              />
+            </div>
+
+            <div className="mx-auto w-full max-w-4xl space-y-7 text-center">
             <div className="space-y-2">
               <h1 className="text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl [font-family:var(--font-display)]">
                 Carson Pimental
@@ -36,10 +45,9 @@ export default function Home() {
                 "Python",
                 "R",
                 "SQL",
-                "Excel",
-                "Tableau",
                 "Next.js",
                 "Vercel",
+                "Excel",
                 "Microsoft Office",
               ].map((x, idx) => (
                 <span key={x} className="inline-flex items-center">
@@ -68,47 +76,58 @@ export default function Home() {
               >
                 LinkedIn
               </ButtonLink>
-              <ButtonLink
+              {/* <ButtonLink
                 href="https://github.com/"
                 variant="secondary"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 GitHub
-              </ButtonLink>
+              </ButtonLink> */}
+            </div>
             </div>
 
-            <div className="border-t border-white/10 pt-6">
-              <p className="text-xs tracking-[0.22em] text-zinc-500 [font-family:var(--font-mono)]">
-                EDUCATION
-              </p>
-              <div className="mt-4 grid gap-4 text-sm text-zinc-300">
-                <div className="space-y-1">
-                  <p className="text-zinc-50">
-                    University of California, Irvine — Paul Merage School of
-                    Business
-                  </p>
-                  <p className="text-zinc-400">
-                    Master of Science in Business Analytics
-                  </p>
-                  <p className="text-zinc-500 [font-family:var(--font-mono)]">
-                    Data Science · Machine Learning · Statistical Modeling ·
-                    Forecasting
-                  </p>
-                  <p className="text-zinc-400">Dean's Scholar</p>
-                </div>
-                <div className="space-y-1">
-                  <p className="text-zinc-50">University of California, Irvine</p>
-                  <p className="text-zinc-400">
-                    Bachelor of Arts in Business Economics
-                  </p>
-                  <p className="text-zinc-500 [font-family:var(--font-mono)]">
-                    Quantitative Economics · Econometrics · Statistics
-                  </p>
-                  <p className="text-zinc-400"></p>
+            <div className="mx-auto flex w-36 shrink-0 justify-center sm:w-44 lg:w-52 lg:self-end lg:translate-y-[calc(50%+1.75rem)]">
+              <img
+                src="/images/projects/top/mlb-draft-league.png"
+                alt="MLB Draft League and Prep Baseball logos"
+                className="h-24 w-auto object-contain sm:h-32 lg:h-40"
+              />
+            </div>
+
+            <div className="hidden lg:block" />
+            <div className="mx-auto w-full max-w-4xl text-center">
+              <div className="border-t border-white/10 pt-6">
+                <SectionTitle title="Education" />
+                <div className="mt-4 grid gap-4 text-sm text-zinc-300">
+                  <div className="space-y-1">
+                    <p className="text-zinc-50">
+                      University of California, Irvine - Paul Merage School of
+                      Business
+                    </p>
+                    <p className="text-zinc-400">
+                      Master of Science in Business Analytics
+                    </p>
+                    <p className="text-zinc-500 [font-family:var(--font-mono)]">
+                      Data Science · Machine Learning · Statistical Modeling ·
+                      Forecasting
+                    </p>
+                    <p className="text-zinc-400">Dean's Scholar</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-zinc-50">University of California, Irvine</p>
+                    <p className="text-zinc-400">
+                      Bachelor of Arts in Business Economics
+                    </p>
+                    <p className="text-zinc-500 [font-family:var(--font-mono)]">
+                      Quantitative Economics · Econometrics · Statistics
+                    </p>
+                    <p className="text-zinc-400"></p>
+                  </div>
                 </div>
               </div>
             </div>
+            <div className="hidden lg:block" />
           </div>
         </Container>
       </section>
@@ -117,9 +136,7 @@ export default function Home() {
         <Container className="py-8 sm:py-10">
           <div className="mx-auto max-w-6xl">
             <div className="mb-2 text-center">
-              <p className="text-2xl font-semibold tracking-tight text-zinc-50 sm:text-3xl [font-family:var(--font-display)]">
-                Work Preview
-              </p>
+              <SectionTitle title="Work Preview" />
             </div>
             <div
               className="reel group relative flex cursor-grab gap-4 overflow-x-auto overscroll-x-contain scroll-smooth py-2 [scroll-snap-type:x_proximity] sm:gap-5 [scrollbar-width:none] [-ms-overflow-style:none] active:cursor-grabbing"
@@ -127,8 +144,8 @@ export default function Home() {
               <style>{`.reel::-webkit-scrollbar{display:none;}`}</style>
 
               {[
-                "/images/projects/stuff-plus/ncaa-preview.png",
-                "/images/projects/banner/Screenshot 2026-09-28 161213.png",
+                "/images/projects/banner/ncaa-stuff-plus.vercel.app_player-profile_pitcher_id=814176&dataset=games (1).png",
+                "/images/projects/New Deviations/Screenshot 2026-10-24 165545.png",
                 "/images/projects/BB/Screenshot 2026-09-17 151207.png",
                 "/images/projects/banner/Screenshot 2026-09-17 134722.png",
                 "/images/projects/banner/Screenshot 2026-09-17 134605.png",
@@ -163,13 +180,11 @@ export default function Home() {
 
       <section id="projects">
         <Container className="py-10 sm:py-12">
-          <div className="mx-auto max-w-4xl space-y-12">
-            <div className="space-y-2 text-center">
-              <h2 className="text-2xl font-semibold tracking-tight text-zinc-50 sm:text-3xl [font-family:var(--font-display)]">
-                Projects
-              </h2>
-            </div>
+          <div className="mb-4 text-center">
+            <SectionTitle title="Projects" />
+          </div>
 
+          <div className="mx-auto max-w-4xl space-y-12">
             {feed.map((p, idx) => (
               <article key={p.slug} className="space-y-6">
                 <div className="flex items-baseline justify-between gap-6">
@@ -198,9 +213,19 @@ export default function Home() {
                   </div>
                 ) : (
                   <div className="mx-auto w-full max-w-md overflow-hidden border border-white/10 bg-black">
-                    <div className="relative aspect-square">
+                    <div
+                      className={`relative ${
+                        p.slug === "mlb-deviations"
+                          ? "aspect-[5/4]"
+                          : "aspect-square"
+                      }`}
+                    >
                       <Image
-                        src={p.image.src}
+                        src={
+                          p.slug === "mlb-deviations"
+                            ? "/images/projects/New Deviations/IMG_4517.PNG"
+                            : p.image.src
+                        }
                         alt={p.image.alt}
                         fill
                         className="object-cover"
@@ -216,7 +241,7 @@ export default function Home() {
                     {p.title}
                   </h2>
                   <p className="mx-auto max-w-3xl text-sm leading-7 text-zinc-400 sm:text-base">
-                    {p.description}
+                    {p.shortDescription}
                   </p>
                 </div>
 
@@ -244,13 +269,6 @@ export default function Home() {
         </Container>
       </section>
 
-      <footer className="border-t border-white/10">
-        <Container className="py-10">
-          <p className="text-xs text-zinc-500 [font-family:var(--font-mono)]">
-            © Carson Pimental
-          </p>
-        </Container>
-      </footer>
     </div>
   );
 }

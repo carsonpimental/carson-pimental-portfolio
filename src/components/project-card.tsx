@@ -49,7 +49,7 @@ export function ProjectCard({
         <h3 className="text-lg font-semibold tracking-tight text-zinc-50 sm:text-xl">
           {project.title}
         </h3>
-        <p className="text-sm leading-7 text-zinc-400">{project.description}</p>
+        <p className="text-sm leading-7 text-zinc-400">{project.shortDescription}</p>
 
         <div className="flex flex-wrap gap-2 pt-2">
           {project.technologies.slice(0, size === "featured" ? 8 : 6).map((t) => (
