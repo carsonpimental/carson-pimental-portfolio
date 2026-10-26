@@ -296,7 +296,7 @@ export default async function ProjectDetailPage({
                             "Visualizes a pitcher's arsenal through interactive movement plots, pitch usage, Stuff+ grades, and detailed pitch characteristics, allowing users to evaluate individual pitches and overall repertoire quality.",
                           images: [
                             {
-                              src: "/images/projects/Stuff+/localhost_3000_player-profile_pitcher_id=815158&dataset=games (1).png",
+                              src: "/images/projects/ncaa-stuff-plus/arsenal-overview.png",
                               alt: "Pitcher metrics and arsenal overview dashboard",
                             },
                           ],
@@ -308,12 +308,12 @@ export default async function ProjectDetailPage({
                             "The Blob allows users to explore how changes in velocity and movement affect predicted pitch quality. Using a pitcher's existing characteristics, the model generates a Stuff+ heatmap across different IVB and HB combinations while holding other factors constant. Users can select locations on the plot to examine potential pitch adjustments and their predicted impact.",
                           images: [
                             {
-                              src: "/images/projects/Stuff+/localhost_3000_player-profile_pitcher_id=815158&dataset=games (3).png",
+                              src: "/images/projects/ncaa-stuff-plus/blob-configure.png",
                               alt: "The Blob pitch design setup with pitch type and velocity selection",
                               caption: "1. Configure Pitch",
                             },
                             {
-                              src: "/images/projects/Stuff+/localhost_3000_player-profile_pitcher_id=815158&dataset=games (4).png",
+                              src: "/images/projects/ncaa-stuff-plus/blob-results.png",
                               alt: "The Blob Stuff+ movement heatmap results",
                               caption: "2. Explore Results",
                             },
@@ -326,7 +326,7 @@ export default async function ProjectDetailPage({
                             "Tracks changes in pitch quality across individual outings, allowing users to monitor Stuff+ trends and evaluate pitcher development throughout the season.",
                           images: [
                             {
-                              src: "/images/projects/Stuff+/localhost_3000_player-profile_pitcher_id=815158&dataset=games (5).png",
+                              src: "/images/projects/ncaa-stuff-plus/development-trends.png",
                               alt: "Development trends showing Stuff+ by outing",
                             },
                           ],
@@ -338,7 +338,7 @@ export default async function ProjectDetailPage({
                             "Uses SHAP values to quantify how individual pitch characteristics positively or negatively influence predicted Stuff+ grades, depicting the factors driving pitch quality.",
                           images: [
                             {
-                              src: "/images/projects/Stuff+/localhost_3000_player-profile_pitcher_id=815158&dataset=games (6).png",
+                              src: "/images/projects/ncaa-stuff-plus/shap-drivers.png",
                               alt: "SHAP analysis of Stuff+ drivers",
                             },
                           ],

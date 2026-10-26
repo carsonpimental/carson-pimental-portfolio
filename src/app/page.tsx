@@ -144,7 +144,7 @@ export default function Home() {
               <style>{`.reel::-webkit-scrollbar{display:none;}`}</style>
 
               {[
-                "/images/projects/banner/ncaa-stuff-plus.vercel.app_player-profile_pitcher_id=814176&dataset=games (1).png",
+                "/images/projects/banner/ncaa-banner.png",
                 "/images/projects/New Deviations/Screenshot 2026-10-24 165545.png",
                 "/images/projects/BB/Screenshot 2026-09-17 151207.png",
                 "/images/projects/banner/Screenshot 2026-09-17 134722.png",

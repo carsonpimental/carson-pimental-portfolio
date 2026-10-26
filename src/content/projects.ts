@@ -54,7 +54,7 @@ export const projects: Project[] = [
     ],
     featured: true,
     image: {
-      src: "/images/projects/Stuff+/ncaa-stuff-plus.vercel.app_player-profile_pitcher_id=814176&dataset=games.png",
+      src: "/images/projects/ncaa-stuff-plus/cover.png",
       alt: "NCAA pitcher evaluation dashboard",
     },
     sections: {
