@@ -154,13 +154,13 @@ export default function Home() {
                   key={src}
                   className="shrink-0 [scroll-snap-align:start]"
                 >
-                  <div className="w-[82vw] aspect-video overflow-hidden rounded-md border border-white/10 bg-black sm:aspect-auto sm:h-[280px] sm:w-auto lg:h-[320px]">
+                  <div className="h-[240px] w-auto overflow-hidden rounded-md border border-white/10 bg-black sm:h-[280px] lg:h-[320px]">
                     <Image
                       src={src}
                       alt="Project screenshot"
                       width={1600}
                       height={900}
-                      className="h-full w-full object-contain sm:w-auto"
+                      className="h-full w-auto object-contain"
                       draggable={false}
                       priority={src.includes("134623")}
                     />
