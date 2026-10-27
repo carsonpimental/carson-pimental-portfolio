@@ -154,7 +154,7 @@ export default function Home() {
                   key={src}
                   className="shrink-0 [scroll-snap-align:start]"
                 >
-                  <div className="flex h-[240px] w-[82vw] items-center justify-center overflow-hidden rounded-md border border-white/10 bg-black p-2 sm:h-[280px] sm:w-auto sm:p-0 lg:h-[320px]">
+                  <div className="w-[82vw] aspect-video overflow-hidden rounded-md border border-white/10 bg-black sm:aspect-auto sm:h-[280px] sm:w-auto lg:h-[320px]">
                     <Image
                       src={src}
                       alt="Project screenshot"
