@@ -254,7 +254,7 @@ export default function Home() {
                 <div className="flex justify-center pt-1">
                   <Link
                     href={`/projects/${p.slug}`}
-                    className="text-sm text-zinc-200 transition hover:text-zinc-50 [font-family:var(--font-mono)]"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm font-semibold text-zinc-50 transition hover:border-white/40 hover:bg-white/15 [font-family:var(--font-mono)]"
                   >
                     View Project →
                   </Link>

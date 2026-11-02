@@ -88,7 +88,7 @@ export const projects: Project[] = [
     description:
       "A full-stack application for detecting meaningful changes in MLB pitcher arsenals across custom date ranges. A Python/FastAPI backend processes Statcast pitch-level data to compare velocity, movement, release traits, spin characteristics, and usage, ranking the most unusual changes by z-score; a Next.js frontend pairs the statistical comparisons with movement and usage visualizations.",
     shortDescription:
-      "A full-stack app that detects meaningful changes in MLB pitcher arsenals.",
+      "A full-stack application that detects meaningful changes in MLB pitcher arsenals.",
     technologies: [
       "Python",
       "FastAPI",

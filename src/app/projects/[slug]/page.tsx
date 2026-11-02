@@ -130,7 +130,7 @@ export default async function ProjectDetailPage({
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      External
+                      View Twitter/X Account
                     </a>
                   ) : null}
                 </div>
@@ -340,6 +340,18 @@ export default async function ProjectDetailPage({
                             {
                               src: "/images/projects/ncaa-stuff-plus/shap-drivers.png",
                               alt: "SHAP analysis of Stuff+ drivers",
+                            },
+                          ],
+                        },
+                        {
+                          kicker: "05 · LEADERBOARD",
+                          title: "Stuff+ Grade Leaderboard",
+                          description:
+                            "Ranks NCAA pitchers by overall arsenal grades. Each pitch type earns its own Stuff+ grade; the OVRL value is a usage-weighted average of a pitcher's individual pitch grades, so the pitches thrown most often drive the score.",
+                          images: [
+                            {
+                              src: "/images/projects/ncaa-stuff-plus/stuff-plus-leaderboard.png",
+                              alt: "Stuff+ grade leaderboard of top NCAA pitchers",
                             },
                           ],
                         },
